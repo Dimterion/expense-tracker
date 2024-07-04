@@ -2,13 +2,15 @@ import { SignInButton } from "@clerk/nextjs";
 
 const Guest = () => {
   return (
-    <div>
+    <section className="guest-section">
       <h1>Welcome!</h1>
-      <p>Please sign in to manage your transactions.</p>
+      <p className="guest-paragraph">
+        Please sign in to manage your transactions.
+      </p>
       <SignInButton>
-        <button className="btn">Sign In</button>
+        <button className="btn btn-guest">Sign In</button>
       </SignInButton>
-    </div>
+    </section>
   );
 };
 

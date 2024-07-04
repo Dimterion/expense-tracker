@@ -1,4 +1,5 @@
 import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import { PiSignInBold } from "react-icons/pi";
 import { checkUser } from "@/lib/checkUser";
 
 const Header = async () => {
@@ -6,19 +7,19 @@ const Header = async () => {
 
   return (
     <nav>
-      <div>
-        <h2>Expense Tracker</h2>
-        <div>
-          <SignedOut>
-            <SignInButton>
-              <button className="btn">Sign In</button>
-            </SignInButton>
-          </SignedOut>
-          <SignedIn>
-            <UserButton />
-          </SignedIn>
-        </div>
-      </div>
+      <h2>Expense Tracker</h2>
+      <section>
+        <SignedOut>
+          <SignInButton>
+            <button className="btn btn-nav">
+              <PiSignInBold />
+            </button>
+          </SignInButton>
+        </SignedOut>
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
+      </section>
     </nav>
   );
 };
