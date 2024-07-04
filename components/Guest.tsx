@@ -5,7 +5,9 @@ const Guest = () => {
     <div>
       <h1>Welcome!</h1>
       <p>Please sign in to manage your transactions.</p>
-      <SignInButton />
+      <SignInButton>
+        <button className="btn">Sign In</button>
+      </SignInButton>
     </div>
   );
 };
