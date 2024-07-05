@@ -19,10 +19,10 @@ const AddTransaction = () => {
   };
 
   return (
-    <>
+    <section className="addTransaction-section">
       <h3>Add transaction</h3>
-      <form ref={formRef} action={clientAction}>
-        <div>
+      <form className="addTransaction-form" ref={formRef} action={clientAction}>
+        <article className="addTransaction-article">
           <label htmlFor="text">Text</label>
           <input
             type="text"
@@ -30,8 +30,8 @@ const AddTransaction = () => {
             name="text"
             placeholder="Enter text..."
           />
-        </div>
-        <div>
+        </article>
+        <article className="addTransaction-article">
           <label htmlFor="amount">
             Amount <br /> (negative - expense, positive - income)
           </label>
@@ -42,10 +42,10 @@ const AddTransaction = () => {
             placeholder="Enter amount..."
             step="0.01"
           />
-        </div>
+        </article>
         <button>Add transaction</button>
       </form>
-    </>
+    </section>
   );
 };
 

@@ -5,16 +5,16 @@ const IncomeExpense = async () => {
   const { income, expense } = await getIncomeExpense();
 
   return (
-    <div>
-      <div>
+    <section className="incomeExpense-section">
+      <article>
         <h4>Income</h4>
         <p>${addCommas(Number(income?.toFixed(2)))}</p>
-      </div>
-      <div>
+      </article>
+      <article>
         <h4>Expense</h4>
         <p>${addCommas(Number(expense?.toFixed(2)))}</p>
-      </div>
-    </div>
+      </article>
+    </section>
   );
 };
 
