@@ -23,8 +23,11 @@ const AddTransaction = () => {
       <h3>Add transaction</h3>
       <form className="addTransaction-form" ref={formRef} action={clientAction}>
         <article className="addTransaction-article">
-          <label htmlFor="text">Text</label>
+          <label className="addTransaction-label" htmlFor="text">
+            Text
+          </label>
           <input
+            className="addTransaction-input"
             type="text"
             id="text"
             name="text"
@@ -32,10 +35,11 @@ const AddTransaction = () => {
           />
         </article>
         <article className="addTransaction-article">
-          <label htmlFor="amount">
+          <label className="addTransaction-label" htmlFor="amount">
             Amount <br /> (negative - expense, positive - income)
           </label>
           <input
+            className="addTransaction-input"
             type="number"
             name="amount"
             id="amount"
@@ -43,7 +47,7 @@ const AddTransaction = () => {
             step="0.01"
           />
         </article>
-        <button>Add transaction</button>
+        <button className="addTransaction-btn">Add transaction</button>
       </form>
     </section>
   );

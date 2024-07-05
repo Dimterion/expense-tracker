@@ -25,12 +25,19 @@ const TransactionItem = ({ transaction }: { transaction: Transaction }) => {
   };
 
   return (
-    <li>
-      {transaction.text}
-      <span>
-        {sign}${addCommas(Math.abs(transaction.amount))}
-      </span>
-      <button onClick={() => handleDeleteTransaction(transaction.id)}>x</button>
+    <li className="transactionItem-li">
+      <p className="transactionItem-paragraph">
+        {transaction.text}
+        <span>
+          {sign}${addCommas(Math.abs(transaction.amount))}
+        </span>
+      </p>
+      <button
+        className="transactionItem-btn"
+        onClick={() => handleDeleteTransaction(transaction.id)}
+      >
+        X
+      </button>
     </li>
   );
 };

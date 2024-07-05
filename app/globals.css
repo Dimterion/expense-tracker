@@ -112,5 +112,81 @@ body {
 .addTransaction-article {
   display: flex;
   flex-flow: column nowrap;
+  gap: 0.5rem;
+}
+
+.addTransaction-article {
+  text-align: start;
+}
+
+.addTransaction-label {
+  margin-top: 0.5rem;
+  font-weight: 600;
+}
+
+.addTransaction-input {
+  padding: 0.375rem 0.75rem;
+  border: 2px solid var(--primary);
+  border-radius: 0.375rem;
+}
+
+.addTransaction-btn {
+  padding: 0.375rem 0.75rem;
+  border: 2px solid var(--primary);
+  border-radius: 0.375rem;
+  margin: 1.5rem 0 1rem;
+  box-shadow: rgb(104, 66, 255) 0px 0px 0px 1px,
+    rgba(255, 255, 255, 0.07) 0px 1px 1px 0px inset,
+    rgba(34, 42, 53, 0.2) 0px 2px 3px 0px, rgba(0, 0, 0, 0.24) 0px 1px 1px 0px;
+  background-color: var(--primary);
+  color: var(--white);
+  font-family: inherit;
+  font-size: 0.8125rem;
+  cursor: pointer;
+}
+
+.addTransaction-btn:hover {
+  opacity: 0.8;
+}
+
+/* Transaction list component */
+.transactionList-ul {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0.5rem;
+}
+
+/* Transaction item component */
+.transactionItem-li {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
   gap: 1rem;
+}
+
+.transactionItem-paragraph {
+  width: 20rem;
+  max-width: 50vw;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.transactionItem-btn {
+  padding: 0.25rem 0.5rem;
+  border: 2px solid var(--primary);
+  border-radius: 0.375rem;
+  margin: 0.25rem 1rem;
+  box-shadow: rgb(104, 66, 255) 0px 0px 0px 1px,
+    rgba(255, 255, 255, 0.07) 0px 1px 1px 0px inset,
+    rgba(34, 42, 53, 0.2) 0px 2px 3px 0px, rgba(0, 0, 0, 0.24) 0px 1px 1px 0px;
+  background-color: var(--primary);
+  color: var(--white);
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.transactionItem-btn:hover {
+  opacity: 0.8;
 }
