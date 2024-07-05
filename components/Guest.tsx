@@ -3,12 +3,12 @@ import { SignInButton } from "@clerk/nextjs";
 const Guest = () => {
   return (
     <section className="guest-section">
-      <h1>Welcome!</h1>
+      <h2>Welcome!</h2>
       <p className="guest-paragraph">
         Please sign in to manage your transactions.
       </p>
       <SignInButton>
-        <button className="btn-guest">Sign In</button>
+        <button className="guest-btn">Sign In</button>
       </SignInButton>
     </section>
   );

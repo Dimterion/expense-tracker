@@ -6,12 +6,12 @@ const Header = async () => {
   const user = await checkUser();
 
   return (
-    <nav>
-      <h2>Expense Tracker</h2>
+    <nav className="header-nav">
+      <h1>Expense Tracker</h1>
       <section>
         <SignedOut>
           <SignInButton>
-            <button className="btn-nav">
+            <button className="header-btn">
               <PiSignInBold />
             </button>
           </SignInButton>
