@@ -8,7 +8,7 @@ const Guest = () => {
         Please sign in to manage your transactions.
       </p>
       <SignInButton>
-        <button className="btn btn-guest">Sign In</button>
+        <button className="btn-guest">Sign In</button>
       </SignInButton>
     </section>
   );
