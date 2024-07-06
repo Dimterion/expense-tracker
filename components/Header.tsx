@@ -6,9 +6,9 @@ const Header = async () => {
   const user = await checkUser();
 
   return (
-    <nav className="header-nav">
-      <h1>Expense Tracker</h1>
-      <section>
+    <header className="header-header">
+      <h1 className="header-h1">Expense Tracker</h1>
+      <nav>
         <SignedOut>
           <SignInButton>
             <button className="header-btn">
@@ -19,8 +19,8 @@ const Header = async () => {
         <SignedIn>
           <UserButton />
         </SignedIn>
-      </section>
-    </nav>
+      </nav>
+    </header>
   );
 };
 

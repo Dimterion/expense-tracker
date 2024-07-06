@@ -14,17 +14,28 @@
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
   color: var(--secondary);
 }
 
-/* Header */
-.header-nav {
+main {
+  flex-grow: 1;
+}
+
+/* Header component */
+.header-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem;
+  padding: 0.25rem;
   background-color: var(--primary);
   color: var(--white);
+}
+
+.header-h1 {
+  font-size: 1.5rem;
 }
 
 .header-btn {
@@ -188,5 +199,21 @@ body {
 }
 
 .transactionItem-btn:hover {
+  opacity: 0.8;
+}
+
+/* Footer component */
+.footer-footer {
+  padding: 0.25rem;
+  background-color: var(--primary);
+  text-align: center;
+}
+
+.footer-a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+.footer-a:hover {
   opacity: 0.8;
 }
