@@ -18,7 +18,7 @@ body {
   flex-direction: column;
   height: 100vh;
   color: var(--secondary);
-  animation: body--appear 1s ease-in-out;
+  animation: body--appear 0.5s ease-in-out;
 }
 
 @keyframes body--appear {
@@ -39,8 +39,7 @@ main {
 .header-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 0.25rem 0.25rem 0.4rem;
+  padding: 0.5rem;
   background-color: var(--primary);
   color: var(--white);
 }
@@ -64,6 +63,10 @@ main {
 
 .header-btn:hover {
   opacity: 0.8;
+}
+
+.header-customClerkBtn {
+  display: flex;
 }
 
 /* Guest component */

@@ -17,7 +17,13 @@ const Header = async () => {
           </SignInButton>
         </SignedOut>
         <SignedIn>
-          <UserButton />
+          <UserButton
+            appearance={{
+              elements: {
+                rootBox: "header-customClerkBtn",
+              },
+            }}
+          />
         </SignedIn>
       </nav>
     </header>
