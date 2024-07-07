@@ -31,7 +31,8 @@ const AddTransaction = () => {
             type="text"
             id="text"
             name="text"
-            placeholder="Enter text..."
+            placeholder="Enter text"
+            maxLength={25}
           />
         </article>
         <article className="addTransaction-article">
@@ -43,7 +44,9 @@ const AddTransaction = () => {
             type="number"
             name="amount"
             id="amount"
-            placeholder="Enter amount..."
+            placeholder="Enter amount"
+            min={-1000000}
+            max={1000000}
             step="0.01"
           />
         </article>
