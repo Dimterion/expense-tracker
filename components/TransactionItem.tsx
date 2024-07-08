@@ -28,8 +28,8 @@ const TransactionItem = ({ transaction }: { transaction: Transaction }) => {
   return (
     <li className="transactionItem-li">
       <p className="transactionItem-paragraph">
-        {transaction.text}
-        <span className={className}>
+        <span>{transaction.text}</span>
+        <span className={`transactionAmount ${className}`}>
           {sign}${addCommas(Math.abs(transaction.amount))}
         </span>
       </p>
