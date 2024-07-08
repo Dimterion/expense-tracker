@@ -7,7 +7,7 @@ import deleteTransaction from "@/app/actions/deleteTransaction";
 
 const TransactionItem = ({ transaction }: { transaction: Transaction }) => {
   const className = transaction.amount < 0 ? "red" : "green";
-  const sign = transaction.amount < 0 ? " -" : " +";
+  const sign = transaction.amount < 0 ? "-" : "+";
 
   const handleDeleteTransaction = async (transactionId: string) => {
     const confirmed = window.confirm(
@@ -28,7 +28,7 @@ const TransactionItem = ({ transaction }: { transaction: Transaction }) => {
   return (
     <li className="transactionItem-li">
       <p className="transactionItem-paragraph">
-        <span>{transaction.text}</span>
+        <span className="transactionText">{transaction.text}</span>
         <span className={`transactionAmount ${className}`}>
           {sign}${addCommas(Math.abs(transaction.amount))}
         </span>
