@@ -6,13 +6,13 @@ const IncomeExpense = async () => {
 
   return (
     <section className="incomeExpense-section">
-      <article>
+      <article className="incomeExpense-article">
         <h4>Income</h4>
-        <p>${addCommas(Number(income?.toFixed(2)))}</p>
+        <p className="green">${addCommas(Number(income?.toFixed(2)))}</p>
       </article>
-      <article>
+      <article className="incomeExpense-article">
         <h4>Expense</h4>
-        <p>${addCommas(Number(expense?.toFixed(2)))}</p>
+        <p className="red">${addCommas(Number(expense?.toFixed(2)))}</p>
       </article>
     </section>
   );
