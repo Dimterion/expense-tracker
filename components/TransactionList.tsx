@@ -12,6 +12,7 @@ const TransactionList = async () => {
   return (
     <>
       <h3>History</h3>
+      {transactions?.length === 0 && <p>No transactions yet.</p>}
       <ul className="transactionList-ul">
         {transactions &&
           transactions.map((transaction: Transaction) => (

@@ -14,7 +14,9 @@ const HomePage = async () => {
 
   return (
     <main className="homePage-main">
-      <h2 className="homePage-h2">Welcome, {user.firstName}!</h2>
+      <h2 className="homePage-h2">
+        Welcome{user.firstName && `, ${user.firstName}`}!
+      </h2>
       <Balance />
       <IncomeExpense />
       <AddTransaction />
