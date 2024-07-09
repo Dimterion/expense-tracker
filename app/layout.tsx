@@ -26,7 +26,7 @@ export default function RootLayout({
           <Header />
           <main>{children}</main>
           <Footer />
-          <ToastContainer />
+          <ToastContainer closeOnClick />
         </body>
       </html>
     </ClerkProvider>
