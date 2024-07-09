@@ -142,7 +142,7 @@ main {
   flex-flow: column nowrap;
   align-items: center;
   gap: 1.5rem;
-  margin: 1rem 1.25rem;
+  margin: 1rem;
   text-align: center;
 }
 
@@ -151,6 +151,10 @@ main {
 }
 
 /* Balance component */
+.balance-h3 {
+  font-size: 1.5rem;
+}
+
 .balance-h2 {
   padding: 0.375rem 0.75rem;
   border: 2px solid var(--primary);
@@ -190,6 +194,13 @@ main {
 }
 
 /* Add transaction component*/
+.addTransaction-section {
+  padding: 0.5rem 0.5rem;
+  border: 2px solid var(--tertiary);
+  border-radius: 0.375rem;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
 .addTransaction-section,
 .addTransaction-form,
 .addTransaction-article {
@@ -224,6 +235,8 @@ main {
   color: var(--white);
   font-family: inherit;
   font-size: 0.8125rem;
+  font-weight: bold;
+  text-transform: uppercase;
   cursor: pointer;
   transition: opacity 0.3s ease-in-out;
 }
@@ -252,6 +265,7 @@ main {
   padding: 0.5rem;
   border: 2px solid var(--primary);
   border-radius: 0.375rem;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .transactionItem-paragraph {
@@ -284,6 +298,7 @@ main {
   background-color: var(--primary);
   color: var(--white);
   font-family: inherit;
+  font-weight: bold;
   cursor: pointer;
   transition: opacity 0.3s ease-in-out;
 }
@@ -295,7 +310,7 @@ main {
 /* Footer component */
 .footer-footer {
   padding: 0.25rem;
-  margin-top: 2rem;
+  margin-top: 1rem;
   background-color: var(--primary);
   text-align: center;
 }
