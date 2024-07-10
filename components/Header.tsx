@@ -7,7 +7,11 @@ const Header = async () => {
 
   return (
     <header className="header-header">
-      <h1 className="header-h1">Expense Tracker</h1>
+      <h1 className="header-h1">
+        <a className="header-a" href="/">
+          Expense Tracker
+        </a>
+      </h1>
       <nav>
         <SignedOut>
           <SignInButton>

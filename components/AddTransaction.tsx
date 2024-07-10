@@ -13,7 +13,7 @@ const AddTransaction = () => {
     if (error) {
       toast.error(error);
     } else {
-      toast.success("Transaction added.");
+      toast.success(`Transaction of ${data?.amount && data?.amount} added.`);
       formRef.current?.reset();
     }
   };
@@ -45,8 +45,8 @@ const AddTransaction = () => {
             name="amount"
             id="amount"
             placeholder="Enter amount"
-            min={-1000000}
-            max={1000000}
+            min={-9999999}
+            max={9999999}
             step="0.01"
           />
           <span className="subText">
