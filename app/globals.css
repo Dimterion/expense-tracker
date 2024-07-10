@@ -143,7 +143,7 @@ main {
   flex-flow: column nowrap;
   align-items: center;
   gap: 1.5rem;
-  margin: 1rem;
+  margin: 1rem 0.5rem;
   text-align: center;
 }
 
@@ -177,8 +177,8 @@ main {
   display: flex;
   flex-flow: column nowrap;
   gap: 0.5rem;
-  width: 10rem;
-  max-width: 50vw;
+  width: 14rem;
+  max-width: 90vw;
   padding: 0.5rem;
   border: 2px solid var(--tertiary);
   border-radius: 0.375rem;
@@ -200,6 +200,7 @@ main {
   padding: 0.5rem 0.5rem;
   border: 2px solid var(--tertiary);
   border-radius: 0.375rem;
+  margin-top: 0.75rem;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   background-color: rgba(var(--accent), 0.1);
 }
@@ -219,6 +220,12 @@ main {
 .addTransaction-label {
   margin-top: 0.5rem;
   font-weight: 600;
+}
+
+.subText {
+  color: var(--tertiary);
+  font-size: 0.9rem;
+  font-weight: bold;
 }
 
 .addTransaction-input {
@@ -249,11 +256,15 @@ main {
 }
 
 /* Transaction list component */
+.transactionList-h3 {
+  margin-top: 0.5rem;
+}
+
 .transactionList-ul {
   display: flex;
   flex-flow: column nowrap;
   gap: 0.5rem;
-  width: 90vw;
+  width: 95vw;
   max-width: 500px;
   padding: 0;
 }

@@ -37,7 +37,7 @@ const AddTransaction = () => {
         </article>
         <article className="addTransaction-article">
           <label className="addTransaction-label" htmlFor="amount">
-            Amount <br /> (negative - expense, positive - income)
+            Amount*
           </label>
           <input
             className="addTransaction-input"
@@ -49,6 +49,9 @@ const AddTransaction = () => {
             max={1000000}
             step="0.01"
           />
+          <span className="subText">
+            *negative - expense; positive - income
+          </span>
         </article>
         <button className="addTransaction-btn" aria-label="Add transaction">
           Add transaction
