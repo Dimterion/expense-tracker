@@ -50,7 +50,9 @@ const AddTransaction = () => {
             step="0.01"
           />
         </article>
-        <button className="addTransaction-btn">Add transaction</button>
+        <button className="addTransaction-btn" aria-label="Add transaction">
+          Add transaction
+        </button>
       </form>
     </section>
   );

@@ -11,7 +11,7 @@ const Header = async () => {
       <nav>
         <SignedOut>
           <SignInButton>
-            <button className="header-btn">
+            <button className="header-btn" aria-label="Sign in">
               <PiSignInBold />
             </button>
           </SignInButton>

@@ -17,7 +17,9 @@ const Guest = () => {
         Please sign in to manage your transactions.
       </p>
       <SignInButton>
-        <button className="guest-btn">Sign In</button>
+        <button className="guest-btn" aria-label="Sign in">
+          Sign In
+        </button>
       </SignInButton>
     </section>
   );
