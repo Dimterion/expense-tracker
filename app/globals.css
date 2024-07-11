@@ -41,12 +41,24 @@ main {
 }
 
 /* Separate colors */
-.green {
+.green-color {
   color: var(--green);
 }
 
-.red {
+.red-color {
   color: var(--red);
+}
+
+.primary-bg {
+  background-color: var(--primary);
+}
+
+.green-bg {
+  background-color: var(--green);
+}
+
+.red-bg {
+  background-color: var(--red);
 }
 
 /* Subtext */
@@ -321,11 +333,10 @@ main {
   display: flex;
   align-items: center;
   padding: 0.5rem;
-  border: 2px solid var(--primary);
+  border: 1px solid transparent;
   border-radius: 0.375rem;
   margin: 0.25rem 0;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  background-color: var(--primary);
   color: var(--white);
   font-family: inherit;
   font-weight: bold;

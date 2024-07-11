@@ -10,7 +10,7 @@ import deleteTransaction from "@/app/actions/deleteTransaction";
 const TransactionItem = ({ transaction }: { transaction: Transaction }) => {
   const [deleteConfirmation, setDeleteConfirmation] = useState(false);
 
-  const className = transaction.amount < 0 ? "red" : "green";
+  const className = transaction.amount < 0 ? "red-color" : "green-color";
   const sign = transaction.amount < 0 ? "-" : "+";
 
   const handleDeleteTransaction = async (transactionId: string) => {
@@ -34,7 +34,7 @@ const TransactionItem = ({ transaction }: { transaction: Transaction }) => {
             </span>
           </p>
           <button
-            className="transactionItem-btn"
+            className="transactionItem-btn primary-bg"
             onClick={() => setDeleteConfirmation(!deleteConfirmation)}
             aria-label="Delete transaction"
           >
@@ -47,12 +47,12 @@ const TransactionItem = ({ transaction }: { transaction: Transaction }) => {
           <article className="transactionItem-article">
             <button
               onClick={() => handleDeleteTransaction(transaction.id)}
-              className="transactionItem-btn"
+              className="transactionItem-btn green-bg"
             >
               <FaCheck />
             </button>
             <button
-              className="transactionItem-btn"
+              className="transactionItem-btn red-bg"
               onClick={() => setDeleteConfirmation(!deleteConfirmation)}
               aria-label="Delete transaction"
             >
