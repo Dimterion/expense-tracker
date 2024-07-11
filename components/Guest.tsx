@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { SignInButton } from "@clerk/nextjs";
-import coverImage from "../assets/images/cover_img.jpg";
+import coverImage from "@/assets/images/cover_img.jpg";
 
 const Guest = () => {
   return (

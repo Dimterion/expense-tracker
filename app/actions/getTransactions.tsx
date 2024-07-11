@@ -1,7 +1,7 @@
 "use server";
 
-import { db } from "@/lib/db";
 import { auth } from "@clerk/nextjs/server";
+import { db } from "@/lib/db";
 import { Transaction } from "@/types/transaction";
 
 async function getTransactions(): Promise<{

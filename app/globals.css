@@ -6,7 +6,7 @@
 }
 
 :root {
-  /* Colors */
+  /* Color variables */
   --primary: #6c47ff;
   --accent: 104, 66, 255;
   --secondary: rgb(33, 33, 38);
@@ -38,6 +38,33 @@ body {
 
 main {
   flex-grow: 1;
+}
+
+/* Separate colors */
+.green {
+  color: var(--green);
+}
+
+.red {
+  color: var(--red);
+}
+
+/* Subtext */
+.subText {
+  color: var(--tertiary);
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+/* Transaction text*/
+.transactionText {
+  width: 55%;
+}
+
+/* Transaction amount */
+.transactionAmount {
+  width: 45%;
+  text-align: end;
 }
 
 /* Header component */
@@ -170,13 +197,17 @@ main {
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   background-color: var(--primary);
   color: var(--white);
+  font-size: 1.75rem;
 }
 
+/* Income/Expense component */
 .incomeExpense-section {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   gap: 1.5rem;
+  font-size: 1.25rem;
+  text-transform: uppercase;
 }
 
 .incomeExpense-article {
@@ -191,14 +222,6 @@ main {
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   background-color: rgba(var(--accent), 0.1);
   font-weight: bold;
-}
-
-.green {
-  color: var(--green);
-}
-
-.red {
-  color: var(--red);
 }
 
 /* Add transaction component*/
@@ -226,12 +249,6 @@ main {
 .addTransaction-label {
   margin-top: 0.5rem;
   font-weight: 600;
-}
-
-.subText {
-  color: var(--tertiary);
-  font-size: 0.9rem;
-  font-weight: bold;
 }
 
 .addTransaction-input {
@@ -298,15 +315,6 @@ main {
   width: 100%;
   font-weight: 500;
   text-align: start;
-}
-
-.transactionText {
-  width: 55%;
-}
-
-.transactionAmount {
-  width: 45%;
-  text-align: end;
 }
 
 .transactionItem-btn {

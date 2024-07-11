@@ -1,5 +1,5 @@
-import getUserBalance from "@/app/actions/getUserBalance";
 import { addCommas } from "@/lib/utils";
+import getUserBalance from "@/app/actions/getUserBalance";
 
 const Balance = async () => {
   const { balance } = await getUserBalance();

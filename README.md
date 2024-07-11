@@ -1,6 +1,6 @@
 # Expense Tracker
 
-Expense Tracker App
+Expense Tracker (Full-Stack App)
 
 ## Built with
 
