@@ -43,7 +43,7 @@ const TransactionItem = ({ transaction }: { transaction: Transaction }) => {
         </>
       ) : (
         <>
-          <p className="transactionItem-paragraph">Delete this transaction?</p>
+          <p className="transactionText red-color">Delete this transaction?</p>
           <article className="transactionItem-article">
             <button
               onClick={() => handleDeleteTransaction(transaction.id)}
