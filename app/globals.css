@@ -23,17 +23,7 @@ body {
   background-color: rgba(0, 0, 0, 0.05);
   color: var(--secondary);
   word-break: break-word;
-  animation: body--appear 0.5s ease-in-out;
-}
-
-@keyframes body--appear {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
+  animation: appear 0.5s ease-in-out;
 }
 
 main {
@@ -71,12 +61,14 @@ main {
 /* Transaction text*/
 .transactionText {
   width: 55%;
+  animation: appear 0.5s ease-in-out;
 }
 
 /* Transaction amount */
 .transactionAmount {
   width: 45%;
   text-align: end;
+  animation: appear 0.5s ease-in-out;
 }
 
 /* Header component */
@@ -342,6 +334,7 @@ main {
   font-weight: bold;
   cursor: pointer;
   transition: opacity 0.3s ease-in-out;
+  animation: appear 0.5s ease-in-out;
 }
 
 .transactionItem-btn:hover {
@@ -351,6 +344,7 @@ main {
 .transactionItem-article {
   display: flex;
   gap: 1rem;
+  animation: appear 0.5s ease-in-out;
 }
 
 /* Footer component */
@@ -368,4 +362,15 @@ main {
 
 .footer-a:hover {
   opacity: 0.8;
+}
+
+/* Animation */
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
