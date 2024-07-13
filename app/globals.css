@@ -78,6 +78,7 @@ main {
   display: flex;
   justify-content: space-between;
   padding: 0.5rem;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5), 0 0px 5px 0 rgba(0, 0, 0, 0.5);
   background-color: var(--primary);
   color: var(--white);
 }
@@ -187,7 +188,7 @@ main {
 }
 
 .homePage-h2 {
-  font-size: 2rem;
+  font-size: 1.75rem;
 }
 
 /* Balance component */
@@ -203,7 +204,7 @@ main {
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   background-color: var(--primary);
   color: var(--white);
-  font-size: 1.75rem;
+  font-size: 1.5rem;
 }
 
 /* Income/Expense component */
@@ -212,7 +213,7 @@ main {
   flex-flow: row wrap;
   justify-content: center;
   gap: 1.5rem;
-  font-size: 1.25rem;
+  margin-top: 0.5rem;
   text-transform: uppercase;
 }
 
@@ -220,10 +221,10 @@ main {
   display: flex;
   flex-flow: column nowrap;
   gap: 0.5rem;
-  width: 14rem;
+  width: 10rem;
   max-width: 90vw;
-  padding: 0.5rem;
-  border: 2px solid var(--tertiary);
+  padding: 0.5rem 0.25rem;
+  border: 2px solid var(--primary);
   border-radius: 0.375rem;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   background-color: rgba(var(--accent), 0.1);
@@ -232,8 +233,8 @@ main {
 
 /* Add transaction component*/
 .addTransaction-section {
-  padding: 0.5rem 0.5rem;
-  border: 2px solid var(--tertiary);
+  padding: 1.5rem 2rem;
+  border: 2px solid var(--primary);
   border-radius: 0.375rem;
   margin-top: 0.75rem;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -268,7 +269,7 @@ main {
   padding: 0.5rem 0.75rem;
   border: 2px solid var(--primary);
   border-radius: 0.375rem;
-  margin: 1.5rem 0 1rem;
+  margin-top: 1rem;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   background-color: var(--primary);
   color: var(--white);
@@ -353,6 +354,7 @@ main {
 .footer-footer {
   padding: 0.25rem;
   margin-top: 1rem;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
   background-color: var(--primary);
   text-align: center;
 }
