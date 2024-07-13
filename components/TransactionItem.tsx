@@ -46,15 +46,16 @@ const TransactionItem = ({ transaction }: { transaction: Transaction }) => {
           <p className="transactionText red-color">Delete this transaction?</p>
           <article className="transactionItem-article">
             <button
-              onClick={() => handleDeleteTransaction(transaction.id)}
               className="transactionItem-btn green-bg"
+              onClick={() => handleDeleteTransaction(transaction.id)}
+              aria-label="Confirm transaction deletion"
             >
               <FaCheck />
             </button>
             <button
               className="transactionItem-btn red-bg"
               onClick={() => setDeleteConfirmation(!deleteConfirmation)}
-              aria-label="Delete transaction"
+              aria-label="Cancel transaction deletion"
             >
               <FaTimes />
             </button>
