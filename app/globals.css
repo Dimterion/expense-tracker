@@ -118,23 +118,26 @@ main {
 
 /* Guest component */
 .guest-section {
-  margin: 2rem 1rem;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem 1rem 1rem;
   text-align: center;
 }
 
 .guest-h1 {
   width: fit-content;
-  padding: 0.75rem 1.5rem;
+  padding: 0.5rem 0.75rem;
   border-radius: 0.75rem;
   margin: auto;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   background-color: rgba(0, 0, 0, 0.1);
-  font-size: 2rem;
+  font-size: 1.75rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .guest-h2 {
-  margin-top: 2rem;
   color: var(--tertiary);
 }
 
@@ -145,7 +148,6 @@ main {
   max-height: 40vh;
   object-fit: cover;
   border-radius: 0.375rem;
-  margin: 2rem 0;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -154,7 +156,6 @@ main {
 }
 
 .guest-paragraph {
-  margin: 1.5rem 2rem 2rem;
   color: var(--tertiary);
   font-size: 1.25rem;
   font-weight: bold;
@@ -182,7 +183,7 @@ main {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1.25rem;
   margin: 1rem 0.5rem;
   text-align: center;
 }
@@ -362,6 +363,7 @@ main {
 .footer-a {
   color: var(--white);
   text-decoration: none;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .footer-a:hover {
