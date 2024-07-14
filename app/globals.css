@@ -88,6 +88,10 @@ main {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
+.header-h1:hover {
+  opacity: 0.8;
+}
+
 .header-a {
   all: unset;
   cursor: pointer;
@@ -103,6 +107,7 @@ main {
   border-radius: 50%;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   background-color: var(--white);
+  color: var(--primary);
   font-size: 1rem;
   cursor: pointer;
   transition: opacity 0.3s ease-in-out;
@@ -121,7 +126,7 @@ main {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  gap: 1rem;
+  gap: 1.5rem;
   margin: 2rem 1rem 1rem;
   text-align: center;
 }
@@ -129,12 +134,13 @@ main {
 .guest-h1 {
   width: fit-content;
   padding: 0.5rem 0.75rem;
-  border-radius: 0.75rem;
+  border-radius: 1rem;
   margin: auto;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: var(--primary);
+  color: var(--white);
   font-size: 1.75rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .guest-h2 {
@@ -149,10 +155,6 @@ main {
   object-fit: cover;
   border-radius: 0.375rem;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.guest-h3 {
-  font-size: 1.5rem;
 }
 
 .guest-paragraph {

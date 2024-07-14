@@ -6,16 +6,13 @@ const Guest = () => {
   return (
     <section className="guest-section">
       <h1 className="guest-h1">Expense Tracker App</h1>
-      <h2 className="guest-h2">Manage your expenses and create a budget.</h2>
+      <h2 className="guest-h2">Manage your expenses and create a budget</h2>
       <Image
         className="guest-img"
         src={coverImage}
         alt="Expense Tracker logo"
       />
-      <h3 className="guest-h3">Welcome!</h3>
-      <p className="guest-paragraph">
-        Please sign in to manage your transactions.
-      </p>
+      <p className="guest-paragraph">Please sign in to continue</p>
       <SignInButton>
         <button className="guest-btn" aria-label="Sign in">
           Sign In
