@@ -9,8 +9,7 @@
   /* Color variables */
   --primary: #6c47ff;
   --accent: 104, 66, 255;
-  --secondary: rgb(33, 33, 38);
-  --tertiary: rgb(116, 118, 134);
+  --secondary: #3a0ca3;
   --white: #fff;
   --green: #005f32;
   --red: #ba181b;
@@ -53,9 +52,9 @@ main {
 
 /* Subtext */
 .subText {
-  color: var(--tertiary);
+  color: var(--secondary);
   font-size: 0.9rem;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 /* Transaction text*/
@@ -144,7 +143,7 @@ main {
 }
 
 .guest-h2 {
-  color: var(--tertiary);
+  color: var(--secondary);
 }
 
 .guest-img {
@@ -158,7 +157,7 @@ main {
 }
 
 .guest-paragraph {
-  color: var(--tertiary);
+  color: var(--secondary);
   font-size: 1.25rem;
   font-weight: bold;
 }
