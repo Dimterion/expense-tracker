@@ -11,7 +11,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Expense Tracker",
-  description: "An application to track your expenses.",
+  description: "A web application to track your expenses and create a budget.",
 };
 
 export default function RootLayout({
