@@ -24,6 +24,7 @@ const AddTransaction = () => {
     <section className="addTransaction-section">
       {!expandSection ? (
         <button
+          aria-label="Open Add Transaction section"
           className="addTransaction-btn"
           onClick={() => setExpandSection(!expandSection)}
         >
@@ -32,6 +33,7 @@ const AddTransaction = () => {
       ) : (
         <>
           <button
+            aria-label="Close Add Transaction section"
             className="addTransaction-btn"
             onClick={() => setExpandSection(!expandSection)}
           >
