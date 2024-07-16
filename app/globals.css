@@ -85,10 +85,12 @@ main {
 .header-h1 {
   font-size: 1.5rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  transition: opacity 0.3s ease-in-out;
 }
 
 .header-h1:hover {
   opacity: 0.8;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .header-a {
@@ -114,6 +116,7 @@ main {
 
 .header-btn:hover {
   opacity: 0.8;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .header-customClerkBtn {
@@ -144,6 +147,7 @@ main {
 
 .guest-h2 {
   color: var(--secondary);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .guest-img {
@@ -160,6 +164,7 @@ main {
   color: var(--secondary);
   font-size: 1.25rem;
   font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .guest-btn {
@@ -171,12 +176,14 @@ main {
   color: var(--white);
   font-family: inherit;
   font-size: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   cursor: pointer;
   transition: opacity 0.3s ease-in-out;
 }
 
 .guest-btn:hover {
   opacity: 0.8;
+  transition: opacity 0.3s ease-in-out;
 }
 
 /* Home page */
@@ -286,6 +293,7 @@ main {
 
 .addTransaction-btn:hover {
   opacity: 0.8;
+  transition: opacity 0.3s ease-in-out;
 }
 
 /* Transaction list component */
@@ -345,6 +353,7 @@ main {
 
 .transactionItem-btn:hover {
   opacity: 0.8;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .transactionItem-article {
@@ -365,11 +374,13 @@ main {
 .footer-a {
   color: var(--white);
   text-decoration: none;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  transition: opacity 0.3s ease-in-out;
 }
 
 .footer-a:hover {
   opacity: 0.8;
+  transition: opacity 0.3s ease-in-out;
 }
 
 /* Animation */
