@@ -243,12 +243,14 @@ main {
 
 /* Add transaction component*/
 .addTransaction-section {
+  position: relative;
   padding: 1.5rem 2rem;
   border: 2px solid var(--primary);
   border-radius: 0.375rem;
   margin-top: 0.75rem;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   background-color: rgba(var(--accent), 0.1);
+  animation: appear 0.5s ease-in-out;
 }
 
 .addTransaction-section,
@@ -292,6 +294,23 @@ main {
 }
 
 .addTransaction-btn:hover {
+  opacity: 0.8;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.addTransaction-btnClose {
+  position: absolute;
+  top: 0.25rem;
+  right: 0;
+  border: none;
+  background-color: transparent;
+  color: var(--secondary);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.addTransaction-btnClose:hover {
   opacity: 0.8;
   transition: opacity 0.3s ease-in-out;
 }
