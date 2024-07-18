@@ -186,6 +186,10 @@ main {
   transition: opacity 0.3s ease-in-out;
 }
 
+.guest-btnArrow {
+  rotate: 90deg;
+}
+
 .guest-btn:hover {
   opacity: 0.8;
   transition: opacity 0.3s ease-in-out;
@@ -316,7 +320,7 @@ main {
 }
 
 .addTransaction-btnClose:hover {
-  opacity: 0.8;
+  opacity: 0.5;
   transition: opacity 0.3s ease-in-out;
 }
 

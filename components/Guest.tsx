@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { TiArrowForward } from "react-icons/ti";
 import { SignInButton } from "@clerk/nextjs";
 import coverImage from "@/assets/images/cover_img.jpg";
 
@@ -12,7 +13,10 @@ const Guest = () => {
         src={coverImage}
         alt="Expense Tracker logo"
       />
-      <p className="guest-paragraph">Please sign in to continue</p>
+      <p className="guest-paragraph">
+        Please sign in to continue
+        <TiArrowForward className="guest-btnArrow" />
+      </p>
       <SignInButton>
         <button className="guest-btn" aria-label="Sign in">
           Sign In
