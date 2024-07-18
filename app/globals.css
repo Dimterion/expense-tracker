@@ -72,6 +72,11 @@ main {
   animation: appear 0.5s ease-in-out;
 }
 
+/* Btn animation */
+.btnAnimation {
+  animation: btnAppear 0.5s ease-in-out;
+}
+
 /* Header component */
 .header-header {
   display: flex;
@@ -404,6 +409,16 @@ main {
 
 /* Animation */
 @keyframes appear {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes btnAppear {
   from {
     opacity: 0;
   }

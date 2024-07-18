@@ -24,7 +24,7 @@ const AddTransaction = () => {
   return !expandSection ? (
     <button
       aria-label="Open Add Transaction section"
-      className="addTransaction-btn"
+      className={`addTransaction-btn ${!expandSection && "btnAnimation"}`}
       onClick={() => setExpandSection(!expandSection)}
     >
       Add transaction
