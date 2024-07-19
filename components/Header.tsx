@@ -7,7 +7,7 @@ const Header = async () => {
 
   return (
     <header className="header-header">
-      <h1 className="header-h1">
+      <h1 className={`header-h1 ${user && "header-loggedIn"}`}>
         <a className="header-a" href="/">
           Expense Tracker
         </a>
