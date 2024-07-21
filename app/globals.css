@@ -247,12 +247,20 @@ main {
   gap: 0.5rem;
   width: 10rem;
   max-width: 90vw;
-  padding: 0.5rem 0.25rem;
   border: 2px solid var(--primary);
   border-radius: 0.5rem;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   background-color: rgba(var(--accent), 0.1);
   font-weight: bold;
+}
+
+.incomeExpense-h4 {
+  padding: 0.25rem;
+  background-color: rgba(var(--accent), 0.2);
+}
+
+.incomeExpense-paragraph {
+  padding: 0 0.25rem 0.25rem;
 }
 
 /* Add transaction component*/
@@ -300,7 +308,7 @@ main {
   background-color: var(--primary);
   color: var(--white);
   font-family: inherit;
-  font-size: 0.8125rem;
+  font-size: 0.9rem;
   font-weight: bold;
   text-transform: uppercase;
   cursor: pointer;
@@ -332,6 +340,7 @@ main {
 /* Transaction list component */
 .transactionList-h3 {
   margin-top: 0.5rem;
+  font-size: 1.25rem;
 }
 
 .transactionList-ul {
@@ -355,6 +364,12 @@ main {
   border-radius: 0.5rem;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   background-color: rgba(var(--accent), 0.1);
+}
+
+@media (max-width: 500px) {
+  .transactionItem-li {
+    font-size: 0.9rem;
+  }
 }
 
 .transactionItem-paragraph {
