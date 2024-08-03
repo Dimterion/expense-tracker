@@ -320,7 +320,7 @@ button:active {
 }
 
 .addTransaction-btn:hover {
-  opacity: 0.8;
+  opacity: 0.9;
   transition: opacity 0.3s ease-in-out;
 }
 
@@ -337,7 +337,7 @@ button:active {
 }
 
 .addTransaction-btnClose:hover {
-  opacity: 0.5;
+  opacity: 0.7;
   transition: opacity 0.3s ease-in-out;
 }
 
@@ -408,7 +408,7 @@ button:active {
 }
 
 .transactionItem-btn:hover {
-  opacity: 0.8;
+  opacity: 0.7;
   transition: opacity 0.3s ease-in-out;
 }
 
