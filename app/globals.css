@@ -29,6 +29,10 @@ main {
   flex-grow: 1;
 }
 
+button:active {
+  scale: 0.95;
+}
+
 /* Separate colors */
 .green-color {
   color: var(--green);
@@ -370,6 +374,10 @@ main {
   .transactionItem-li {
     font-size: 0.9rem;
   }
+}
+
+.transactionItem-li:hover {
+  background-color: rgba(var(--accent), 0.2);
 }
 
 .transactionItem-paragraph {
