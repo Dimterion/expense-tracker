@@ -12,6 +12,9 @@ const Guest = () => {
         className="guest-img"
         src={coverImage}
         alt="Expense Tracker logo"
+        width={300}
+        height={300}
+        priority
       />
       <p className="guest-paragraph">
         Please sign in to continue

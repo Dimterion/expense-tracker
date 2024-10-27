@@ -164,9 +164,7 @@ button:active {
 }
 
 .guest-img {
-  width: 350px;
   max-width: 80vw;
-  height: 350px;
   max-height: 40vh;
   object-fit: cover;
   border-radius: 0.5rem;
