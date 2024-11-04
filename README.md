@@ -4,11 +4,13 @@
   <img src="./assets/images/expense_tracker_readme_header.jpg" alt="Expense Tracker guest page" />
 </div>
 
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white) ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+
 ## A Full-Stack application to track income and expenses
 
-[Live Version](https://expense-tracker-lac-eta.vercel.app/)
+🔗 [Live Version](https://expense-tracker-lac-eta.vercel.app/)
 
-## Features
+## 📋 Features
 
 - Create account (standard login/password or Google authentication)
 - Add transactions (expenses/income)
@@ -17,7 +19,7 @@
 - Track overall balance as well as current sum of expenses and income
 - Manage account details (Clerk)
 
-## Screenshots
+## 📷 Screenshots
 
 ### Guest home page
 
@@ -31,7 +33,7 @@
   <img src="./assets/images/expense_tracker_main_page.jpg" alt="Expense Tracker guest page" />
 </div>
 
-## Built with
+## ⚙️ Tech Stack
 
 - Next.js
 - TypeScript
