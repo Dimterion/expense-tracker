@@ -1,10 +1,4 @@
-<style>
-  .img-style { 
-    border-radius: 5px;
-  }
-</style>
-
-<img src="./assets/images/expense_tracker_readme_header.jpg" class="img-style" alt="Expense Tracker readme header" />
+<img src="./assets/images/expense_tracker_readme_header.svg" alt="Expense Tracker readme header" />
 
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white) ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 
@@ -38,13 +32,13 @@ Expense Tracker is a full-stack application designed to help track users income 
 
 ### Guest home page
 
-<img src="./assets/images/expense_tracker_guest_page.jpg" class="img-style" alt="Expense Tracker guest page" />
+<img src="./assets/images/expense_tracker_guest_page.svg" alt="Expense Tracker guest page" />
 
 **Caption:** Home page for unregistered users.
 
 ### User home page
 
-<img src="./assets/images/expense_tracker_main_page.jpg" class="img-style" alt="Expense Tracker main page" />
+<img src="./assets/images/expense_tracker_main_page.svg" alt="Expense Tracker main page" />
 
 **Caption:** Home page for registered users.
 
@@ -69,7 +63,7 @@ Expense Tracker is a full-stack application designed to help track users income 
 ### Bio Link ⬇️
 
 <a href="https://dimterion.bio.link/">
-  <img src="./assets/images/expense_tracker_readme_footer.jpg" class="img-style" alt="Expense Tracker readme header" />
+  <img src="./assets/images/expense_tracker_readme_footer.svg" alt="Expense Tracker readme header" />
 </a>
 
 **Note:** Ctrl+Click (Windows/Linux) or Cmd+Click (macOS) the image to open link in a new tab.
