@@ -1,14 +1,31 @@
-# Expense Tracker
+<style>
+  .img-style { 
+    border-radius: 5px;
+  }
+</style>
 
-<img src="./assets/images/expense_tracker_readme_header.jpg" alt="Expense Tracker guest page" />
+<img src="./assets/images/expense_tracker_readme_header.jpg" class="img-style" alt="Expense Tracker readme header" />
 
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white) ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 
-## A Full-Stack application to track income and expenses
+# Expense Tracker
 
-🔗 [Live Version](https://expense-tracker-lac-eta.vercel.app/)
+Next.js / TypeScript application
 
-## 📋 Features
+## 📋 Table of Contents
+
+- [Introduction](#introduction)
+- [Features](#features)
+- [Screenshots](#screenshots)
+- [Tech Stack](#tech-stack)
+- [Live Version](#live-version)
+- [Contact Info](#contact-info)
+
+## <a id="introduction"></a>🔎 Introduction
+
+Expense Tracker is a full-stack application designed to help track users income and expenses.
+
+## <a id="features"></a>📌 Features
 
 - Create account (standard login/password or Google authentication)
 - Add transactions (expenses/income)
@@ -17,17 +34,21 @@
 - Track overall balance as well as current sum of expenses and income
 - Manage account details (Clerk)
 
-## 📷 Screenshots
+## <a id="screenshots"></a>📷 Screenshots
 
 ### Guest home page
 
-<img src="./assets/images/expense_tracker_guest_page.jpg" style="border-radius:5px;" alt="Expense Tracker guest page" />
+<img src="./assets/images/expense_tracker_guest_page.jpg" class="img-style" alt="Expense Tracker guest page" />
+
+**Caption:** Home page for unregistered users.
 
 ### User home page
 
-<img src="./assets/images/expense_tracker_main_page.jpg" style="border-radius:5px;" alt="Expense Tracker main page" />
+<img src="./assets/images/expense_tracker_main_page.jpg" class="img-style" alt="Expense Tracker main page" />
 
-## ⚙️ Tech Stack
+**Caption:** Home page for registered users.
+
+## <a id="tech-stack"></a>⚙️ Tech Stack
 
 - Next.js
 - TypeScript
@@ -38,3 +59,17 @@
 - React Toastify
 - React Icons
 - Prettier
+
+## <a id="live-version"></a>🔗 Live Version
+
+### [Expense Tracker](https://expense-tracker-lac-eta.vercel.app/)
+
+## <a id="contact-info"></a>📫 Contact info
+
+### Bio Link ⬇️
+
+<a href="https://dimterion.bio.link/">
+  <img src="./assets/images/expense_tracker_readme_footer.jpg" class="img-style" alt="Expense Tracker readme header" />
+</a>
+
+**Note:** Ctrl+Click (Windows/Linux) or Cmd+Click (macOS) the image to open link in a new tab.
