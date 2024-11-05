@@ -1,8 +1,6 @@
 # Expense Tracker
 
-<div style="text-align:center;margin:auto;">
-  <img src="./assets/images/expense_tracker_readme_header.jpg" alt="Expense Tracker guest page" />
-</div>
+<img src="./assets/images/expense_tracker_readme_header.jpg" alt="Expense Tracker guest page" />
 
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white) ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 
@@ -23,15 +21,11 @@
 
 ### Guest home page
 
-<div style="text-align:center;margin:auto;">
-  <img src="./assets/images/expense_tracker_guest_page.jpg" alt="Expense Tracker guest page" />
-</div>
+<img src="./assets/images/expense_tracker_guest_page.jpg" style="border-radius:5px;" alt="Expense Tracker guest page" />
 
 ### User home page
 
-<div style="text-align:center;margin:auto;">
-  <img src="./assets/images/expense_tracker_main_page.jpg" alt="Expense Tracker guest page" />
-</div>
+<img src="./assets/images/expense_tracker_main_page.jpg" style="border-radius:5px;" alt="Expense Tracker main page" />
 
 ## ⚙️ Tech Stack
 
