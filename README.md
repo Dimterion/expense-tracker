@@ -53,6 +53,7 @@ Expense Tracker is a full-stack application designed to help track users income 
 - React Toastify
 - React Icons
 - Prettier
+- Vercel
 
 ## <a id="live-version"></a>🔗 Live Version
 
