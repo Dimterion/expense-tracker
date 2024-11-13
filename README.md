@@ -64,7 +64,7 @@ Expense Tracker is a full-stack application designed to help track users income 
 ### Bio Link ⬇️
 
 <a href="https://dimterion.bio.link/">
-  <img src="./assets/images/expense_tracker_readme_footer.svg" alt="Expense Tracker readme header" />
+  <img src="./assets/images/expense_tracker_readme_footer.svg" alt="Expense Tracker readme footer" />
 </a>
 
 **Note:** Ctrl+Click (Windows/Linux) or Cmd+Click (macOS) the image to open link in a new tab.

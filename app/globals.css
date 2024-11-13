@@ -206,8 +206,9 @@ button:active {
   font-size: 0.75rem;
 }
 
-/* Home page */
-.homePage-main {
+/* Home & about pages */
+.homePage-main,
+.aboutPage-main {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
@@ -216,7 +217,8 @@ button:active {
   text-align: center;
 }
 
-.homePage-h2 {
+.homePage-h2,
+.aboutPage-h2 {
   font-size: 1.75rem;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
