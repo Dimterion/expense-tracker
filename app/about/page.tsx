@@ -1,5 +1,6 @@
 import Image from "next/image";
 import coverImage from "@/assets/images/expense_tracker_readme_header.svg";
+import footerImage from "@/assets/images/expense_tracker_readme_footer.svg";
 
 const About = async () => {
   return (
@@ -30,6 +31,20 @@ const About = async () => {
         </li>
         <li>Manage account details</li>
       </ul>
+      <a
+        href="https://github.com/Dimterion"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Image
+          className="aboutPage-img"
+          src={footerImage}
+          alt="Expense Tracker footer image"
+          width={1000}
+          height={400}
+          priority
+        />
+      </a>
     </main>
   );
 };
