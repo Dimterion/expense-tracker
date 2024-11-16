@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { FaLink } from "react-icons/fa";
 import coverImage from "@/assets/images/expense_tracker_readme_header.svg";
 import footerImage from "@/assets/images/expense_tracker_readme_footer.svg";
 
@@ -31,6 +32,9 @@ const About = async () => {
         </li>
         <li>Manage account details</li>
       </ul>
+      <h3>
+        Contact info <FaLink />
+      </h3>
       <a
         href="https://github.com/Dimterion"
         target="_blank"
@@ -45,6 +49,7 @@ const About = async () => {
           priority
         />
       </a>
+      <pre>Bio Link</pre>
     </main>
   );
 };
