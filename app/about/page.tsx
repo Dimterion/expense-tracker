@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { FaLink } from "react-icons/fa";
+import { FaArrowUp, FaLink } from "react-icons/fa";
 import coverImage from "@/assets/images/expense_tracker_readme_header.svg";
 import footerImage from "@/assets/images/expense_tracker_readme_footer.svg";
 
@@ -49,7 +49,9 @@ const About = async () => {
           priority
         />
       </a>
-      <pre>Bio Link</pre>
+      <pre>
+        <FaArrowUp /> Bio Link <FaArrowUp />
+      </pre>
     </main>
   );
 };
