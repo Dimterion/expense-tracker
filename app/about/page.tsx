@@ -32,7 +32,7 @@ const About = async () => {
         </li>
         <li>Manage account details</li>
       </ul>
-      <h3>
+      <h3 className="aboutPage-h3">
         Contact info <FaLink />
       </h3>
       <a
@@ -49,9 +49,9 @@ const About = async () => {
           priority
         />
       </a>
-      <pre>
+      <strong>
         <FaArrowUp /> Bio Link <FaArrowUp />
-      </pre>
+      </strong>
     </main>
   );
 };
