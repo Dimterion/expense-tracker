@@ -213,7 +213,7 @@ button:active {
   flex-flow: column nowrap;
   align-items: center;
   gap: 1.25rem;
-  margin: 1rem 0.5rem;
+  margin: 2rem 0.5rem 1rem;
   text-align: center;
 }
 
@@ -234,10 +234,12 @@ button:active {
 }
 
 .aboutPage-ul {
+  max-width: 600px;
   text-align: start;
 }
 
 .aboutPage-paragraph {
+  max-width: 600px;
   color: var(--secondary);
   font-size: 1.25rem;
   font-weight: bold;
