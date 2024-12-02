@@ -5,7 +5,13 @@ import { v4 as uuidv4 } from "uuid";
 import { FaTimes } from "react-icons/fa";
 import { addCommas } from "@/lib/utils";
 
-type Transaction = { id: string; text: string; amount: number };
+type Transaction = {
+  id: string;
+  text: string;
+  amount: number;
+  sign: string;
+  className: string;
+};
 
 const ExpenseTracker = () => {
   const [balance, setBalance] = useState(0);
@@ -33,6 +39,8 @@ const ExpenseTracker = () => {
     const id = uuidv4();
     const text = transaction.text;
     const amount = parseFloat(transaction.amount);
+    const className = amount < 0 ? "red-color" : "green-color";
+    const sign = amount < 0 ? "-" : "+";
 
     if (amount > 0) {
       setIncome((prevIncome) => prevIncome + amount);
@@ -43,7 +51,7 @@ const ExpenseTracker = () => {
     setBalance((prevBalance) => prevBalance + amount);
     setTransactions((prevTransactions) => [
       ...prevTransactions,
-      { id, text, amount },
+      { id, text, amount, sign, className },
     ]);
     setTransaction({ text: "", amount: "0" });
   }
@@ -139,8 +147,10 @@ const ExpenseTracker = () => {
               <li key={transaction.id}>
                 <p className="transactionItem-paragraph">
                   <span className="transactionText">{transaction.text}</span>
-                  <span className={`transactionAmount`}>
-                    ${addCommas(Math.abs(transaction.amount))}
+                  <span
+                    className={`transactionAmount ${transaction.className}`}
+                  >
+                    {transaction.sign}${addCommas(Math.abs(transaction.amount))}
                   </span>
                 </p>
               </li>
