@@ -1,8 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 import { FaTimes } from "react-icons/fa";
 import { addCommas } from "@/lib/utils";
+
+type Transaction = { id: string; amount: number; text: string };
 
 const ExpenseTracker = () => {
   const [balance, setBalance] = useState(0);
@@ -12,9 +15,10 @@ const ExpenseTracker = () => {
     text: "",
     amount: "0",
   });
+  const [transactions, setTransactions] = useState<Transaction[]>([]);
   const [expandSection, setExpandSection] = useState(false);
 
-  function handleChange(e: { target: { name: any; value: any; }; }) {
+  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
     const { name, value } = e.target;
 
     setTransaction((prevTransaction) => ({
@@ -23,7 +27,7 @@ const ExpenseTracker = () => {
     }));
   }
 
-  function handleSubmit(e: { preventDefault: () => void; }) {
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
     const amount = parseFloat(transaction.amount);
@@ -35,6 +39,10 @@ const ExpenseTracker = () => {
     }
 
     setBalance((prevBalance) => prevBalance + amount);
+    setTransactions((prevTransactions) => [
+      ...prevTransactions,
+      { id: uuidv4(), amount: amount, text: transaction.text },
+    ]);
     setTransaction({ amount: "0", text: "" });
   }
 
@@ -120,6 +128,18 @@ const ExpenseTracker = () => {
           </form>
         </section>
       )}
+      <section>
+        <h3 className="transactionList-h3">History</h3>
+        {transactions?.length === 0 && <p>No transactions yet.</p>}
+        <ul className="transactionList-ul">
+          {transactions &&
+            transactions.map((transaction) => (
+              <li key={transaction.id}>
+                {transaction.text}:{transaction.amount}
+              </li>
+            ))}
+        </ul>
+      </section>
     </main>
   );
 };
