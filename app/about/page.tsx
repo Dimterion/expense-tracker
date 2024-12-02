@@ -3,7 +3,7 @@ import { FaArrowUp, FaLink } from "react-icons/fa";
 import coverImage from "@/assets/images/expense_tracker_readme_header.svg";
 import footerImage from "@/assets/images/expense_tracker_readme_footer.svg";
 
-const About = async () => {
+const About = () => {
   return (
     <main className="aboutPage-main">
       <h2 className="aboutPage-h2">Expense Tracker App</h2>
