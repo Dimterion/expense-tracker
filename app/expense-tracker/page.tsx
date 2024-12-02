@@ -137,7 +137,12 @@ const ExpenseTracker = () => {
           {transactions &&
             transactions.map((transaction) => (
               <li key={transaction.id}>
-                {transaction.text}:{transaction.amount}
+                <p className="transactionItem-paragraph">
+                  <span className="transactionText">{transaction.text}</span>
+                  <span className={`transactionAmount`}>
+                    ${addCommas(Math.abs(transaction.amount))}
+                  </span>
+                </p>
               </li>
             ))}
         </ul>
