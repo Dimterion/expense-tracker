@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from "uuid";
 import { FaTimes } from "react-icons/fa";
 import { addCommas } from "@/lib/utils";
 
-type Transaction = { id: string; amount: number; text: string };
+type Transaction = { id: string; text: string; amount: number };
 
 const ExpenseTracker = () => {
   const [balance, setBalance] = useState(0);
@@ -30,6 +30,8 @@ const ExpenseTracker = () => {
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
+    const id = uuidv4();
+    const text = transaction.text;
     const amount = parseFloat(transaction.amount);
 
     if (amount > 0) {
@@ -41,9 +43,9 @@ const ExpenseTracker = () => {
     setBalance((prevBalance) => prevBalance + amount);
     setTransactions((prevTransactions) => [
       ...prevTransactions,
-      { id: uuidv4(), amount: amount, text: transaction.text },
+      { id, text, amount },
     ]);
-    setTransaction({ amount: "0", text: "" });
+    setTransaction({ text: "", amount: "0" });
   }
 
   return (
