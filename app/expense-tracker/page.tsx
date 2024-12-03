@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { FaTimes } from "react-icons/fa";
+import { toast } from "react-toastify";
 import { addCommas } from "@/lib/utils";
 
 type Transaction = {
@@ -37,10 +38,15 @@ const ExpenseTracker = () => {
     e.preventDefault();
 
     const id = uuidv4();
-    const text = transaction.text;
+    const text = transaction.text.trim();
     const amount = parseFloat(transaction.amount);
     const className = amount < 0 ? "red-color" : "green-color";
     const sign = amount < 0 ? "-" : "+";
+
+    if (!text || text === "" || isNaN(amount) || amount === 0) {
+      toast.error("Text or amount is missing.");
+      return;
+    }
 
     if (amount > 0) {
       setIncome((prevIncome) => prevIncome + amount);
@@ -54,6 +60,8 @@ const ExpenseTracker = () => {
       { id, text, amount, sign, className },
     ]);
     setTransaction({ text: "", amount: "0" });
+
+    toast.success(`Transaction of ${amount && amount}$ added.`);
   }
 
   return (
@@ -144,7 +152,7 @@ const ExpenseTracker = () => {
         <ul className="transactionList-ul">
           {transactions &&
             transactions.map((transaction) => (
-              <li key={transaction.id}>
+              <li key={transaction.id} className="transactionItem-li">
                 <p className="transactionItem-paragraph">
                   <span className="transactionText">{transaction.text}</span>
                   <span
