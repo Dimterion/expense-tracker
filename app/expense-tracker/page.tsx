@@ -64,6 +64,21 @@ const ExpenseTracker = () => {
     toast.success(`Transaction of ${amount && amount}$ added.`);
   }
 
+  function deleteTransaction(transaction: Transaction) {
+    setTransactions((prevTransactions) =>
+      prevTransactions.filter(
+        (prevTransaction) => prevTransaction.id !== transaction.id
+      )
+    );
+    setBalance((prevBalance) => prevBalance - transaction.amount);
+
+    if (transaction.amount > 0) {
+      setIncome((prevIncome) => prevIncome - transaction.amount);
+    } else {
+      setExpense((prevExpense) => prevExpense - Math.abs(transaction.amount));
+    }
+  }
+
   return (
     <main className="homePage-main">
       <h2 className="homePage-h2">Welcome!</h2>
@@ -161,6 +176,13 @@ const ExpenseTracker = () => {
                     {transaction.sign}${addCommas(Math.abs(transaction.amount))}
                   </span>
                 </p>
+                <button
+                  className="transactionItem-btn primary-bg"
+                  onClick={() => deleteTransaction(transaction)}
+                  aria-label="Delete transaction"
+                >
+                  <FaTimes />
+                </button>
               </li>
             ))}
         </ul>
