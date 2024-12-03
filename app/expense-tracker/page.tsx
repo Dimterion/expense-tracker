@@ -61,6 +61,7 @@ const ExpenseTracker = () => {
       { id, text, amount, sign, className, deleteConfirmation: false },
     ]);
     setTransaction({ text: "", amount: "0" });
+    setExpandSection(!expandSection);
 
     toast.success(`Transaction of ${amount && amount}$ added.`);
   }
@@ -91,6 +92,8 @@ const ExpenseTracker = () => {
     } else {
       setExpense((prevExpense) => prevExpense - Math.abs(transaction.amount));
     }
+
+    toast.success("Transaction deleted.");
   }
 
   return (
