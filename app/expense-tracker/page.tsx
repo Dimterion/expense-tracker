@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-import { FaTimes } from "react-icons/fa";
+import { FaCheck, FaTimes } from "react-icons/fa";
 import { toast } from "react-toastify";
 import { addCommas } from "@/lib/utils";
 
@@ -12,6 +12,7 @@ type Transaction = {
   amount: number;
   sign: string;
   className: string;
+  deleteConfirmation: boolean;
 };
 
 const ExpenseTracker = () => {
@@ -57,11 +58,24 @@ const ExpenseTracker = () => {
     setBalance((prevBalance) => prevBalance + amount);
     setTransactions((prevTransactions) => [
       ...prevTransactions,
-      { id, text, amount, sign, className },
+      { id, text, amount, sign, className, deleteConfirmation: false },
     ]);
     setTransaction({ text: "", amount: "0" });
 
     toast.success(`Transaction of ${amount && amount}$ added.`);
+  }
+
+  function toggleDeleteConfirmation(transactionId: string) {
+    setTransactions((prevTransactions) =>
+      prevTransactions.map((transaction) =>
+        transaction.id === transactionId
+          ? {
+              ...transaction,
+              deleteConfirmation: !transaction.deleteConfirmation,
+            }
+          : transaction
+      )
+    );
   }
 
   function deleteTransaction(transaction: Transaction) {
@@ -168,21 +182,50 @@ const ExpenseTracker = () => {
           {transactions &&
             transactions.map((transaction) => (
               <li key={transaction.id} className="transactionItem-li">
-                <p className="transactionItem-paragraph">
-                  <span className="transactionText">{transaction.text}</span>
-                  <span
-                    className={`transactionAmount ${transaction.className}`}
-                  >
-                    {transaction.sign}${addCommas(Math.abs(transaction.amount))}
-                  </span>
-                </p>
-                <button
-                  className="transactionItem-btn primary-bg"
-                  onClick={() => deleteTransaction(transaction)}
-                  aria-label="Delete transaction"
-                >
-                  <FaTimes />
-                </button>
+                {!transaction.deleteConfirmation ? (
+                  <>
+                    <p className="transactionItem-paragraph">
+                      <span className="transactionText">
+                        {transaction.text}
+                      </span>
+                      <span
+                        className={`transactionAmount ${transaction.className}`}
+                      >
+                        {transaction.sign}$
+                        {addCommas(Math.abs(transaction.amount))}
+                      </span>
+                    </p>
+                    <button
+                      className="transactionItem-btn primary-bg"
+                      onClick={() => toggleDeleteConfirmation(transaction.id)}
+                      aria-label="Delete transaction"
+                    >
+                      <FaTimes />
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    <p className="transactionText red-color">
+                      Delete this transaction?
+                    </p>
+                    <article className="transactionItem-article">
+                      <button
+                        className="transactionItem-btn primary-bg"
+                        onClick={() => deleteTransaction(transaction)}
+                        aria-label="Delete transaction"
+                      >
+                        <FaCheck />
+                      </button>
+                      <button
+                        className="transactionItem-btn red-bg"
+                        onClick={() => toggleDeleteConfirmation(transaction.id)}
+                        aria-label="Cancel transaction deletion"
+                      >
+                        <FaTimes />
+                      </button>
+                    </article>
+                  </>
+                )}
               </li>
             ))}
         </ul>
