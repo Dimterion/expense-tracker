@@ -175,7 +175,7 @@ const ExpenseTracker = () => {
           </form>
         </section>
       )}
-      <section>
+      <>
         <h3 className="transactionList-h3">History</h3>
         {transactions?.length === 0 && <p>No transactions yet.</p>}
         <ul className="transactionList-ul">
@@ -210,9 +210,9 @@ const ExpenseTracker = () => {
                     </p>
                     <article className="transactionItem-article">
                       <button
-                        className="transactionItem-btn primary-bg"
+                        className="transactionItem-btn green-bg"
                         onClick={() => deleteTransaction(transaction)}
-                        aria-label="Delete transaction"
+                        aria-label="Confirm transaction deletion"
                       >
                         <FaCheck />
                       </button>
@@ -229,7 +229,7 @@ const ExpenseTracker = () => {
               </li>
             ))}
         </ul>
-      </section>
+      </>
     </main>
   );
 };
