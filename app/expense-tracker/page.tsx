@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { FaCheck, FaTimes } from "react-icons/fa";
 import { toast } from "react-toastify";
@@ -103,14 +103,14 @@ const ExpenseTracker = () => {
     }
   }, [transactions]);
 
-  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
+  const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
 
     setTransaction((prevTransaction) => ({
       ...prevTransaction,
       [name]: value,
     }));
-  }
+  }, []);
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
