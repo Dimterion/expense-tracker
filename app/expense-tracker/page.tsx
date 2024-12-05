@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { FaCheck, FaTimes } from "react-icons/fa";
 import { toast } from "react-toastify";
@@ -16,15 +16,84 @@ type Transaction = {
 };
 
 const ExpenseTracker = () => {
-  const [balance, setBalance] = useState(0);
-  const [income, setIncome] = useState(0);
-  const [expense, setExpense] = useState(0);
+  const [balance, setBalance] = useState(() => {
+    try {
+      const savedBalance = localStorage.getItem("balance");
+      return savedBalance ? JSON.parse(savedBalance) : 0;
+    } catch (error) {
+      console.error("Local storage error:", error);
+      return 0;
+    }
+  });
+  const [income, setIncome] = useState(() => {
+    try {
+      const savedIncome = localStorage.getItem("income");
+      return savedIncome ? JSON.parse(savedIncome) : 0;
+    } catch (error) {
+      console.error("Local storage error:", error);
+      return 0;
+    }
+  });
+  const [expense, setExpense] = useState(() => {
+    try {
+      const savedExpense = localStorage.getItem("expense");
+      return savedExpense ? JSON.parse(savedExpense) : 0;
+    } catch (error) {
+      console.error("Local storage error:", error);
+      return 0;
+    }
+  });
   const [transaction, setTransaction] = useState({
     text: "",
     amount: "0",
   });
-  const [transactions, setTransactions] = useState<Transaction[]>([]);
+  const [transactions, setTransactions] = useState<Transaction[]>(() => {
+    try {
+      const savedTransactions = localStorage.getItem("transactions");
+      return savedTransactions ? JSON.parse(savedTransactions) : [];
+    } catch (error) {
+      console.error("Local storage error:", error);
+      return [];
+    }
+  });
   const [expandSection, setExpandSection] = useState(false);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem("balance", JSON.stringify(balance));
+    } catch (error) {
+      console.error("Local storage error:", error);
+    }
+  }, [balance]);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem("income", JSON.stringify(income));
+    } catch (error) {
+      console.error("Local storage error:", error);
+    }
+  }, [income]);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem("expense", JSON.stringify(expense));
+    } catch (error) {
+      console.error("Local storage error:", error);
+    }
+  }, [expense]);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem("transactions", JSON.stringify(transactions));
+    } catch (error) {
+      console.error("Local storage error:", error);
+    }
+  }, [transactions]);
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
     const { name, value } = e.target;
@@ -50,12 +119,12 @@ const ExpenseTracker = () => {
     }
 
     if (amount > 0) {
-      setIncome((prevIncome) => prevIncome + amount);
+      setIncome((prevIncome: number) => prevIncome + amount);
     } else {
-      setExpense((prevExpense) => prevExpense + Math.abs(amount));
+      setExpense((prevExpense: number) => prevExpense + Math.abs(amount));
     }
 
-    setBalance((prevBalance) => prevBalance + amount);
+    setBalance((prevBalance: number) => prevBalance + amount);
     setTransactions((prevTransactions) => [
       ...prevTransactions,
       { id, text, amount, sign, className, deleteConfirmation: false },
@@ -85,12 +154,14 @@ const ExpenseTracker = () => {
         (prevTransaction) => prevTransaction.id !== transaction.id
       )
     );
-    setBalance((prevBalance) => prevBalance - transaction.amount);
+    setBalance((prevBalance: number) => prevBalance - transaction.amount);
 
     if (transaction.amount > 0) {
-      setIncome((prevIncome) => prevIncome - transaction.amount);
+      setIncome((prevIncome: number) => prevIncome - transaction.amount);
     } else {
-      setExpense((prevExpense) => prevExpense - Math.abs(transaction.amount));
+      setExpense(
+        (prevExpense: number) => prevExpense - Math.abs(transaction.amount)
+      );
     }
 
     toast.success("Transaction deleted.");
@@ -102,20 +173,20 @@ const ExpenseTracker = () => {
       <section>
         <h3 className="balance-h3">Your Balance:</h3>
         <h2 className="balance-h2">
-          ${addCommas(Number(balance?.toFixed(2) ?? 0))}
+          {isClient ? `$${addCommas(Number(balance?.toFixed(2) ?? 0))}` : ""}
         </h2>
       </section>
       <section className="incomeExpense-section">
         <article className="incomeExpense-article">
           <h4 className="incomeExpense-h4">Income</h4>
           <p className="incomeExpense-paragraph green-color">
-            ${addCommas(Number(income?.toFixed(2)))}
+            {isClient ? `$${addCommas(Number(income?.toFixed(2)))}` : ""}
           </p>
         </article>
         <article className="incomeExpense-article">
           <h4 className="incomeExpense-h4">Expense</h4>
           <p className="incomeExpense-paragraph red-color">
-            ${addCommas(Number(expense?.toFixed(2)))}
+            {isClient ? `$${addCommas(Number(expense?.toFixed(2)))}` : ""}
           </p>
         </article>
       </section>
@@ -180,57 +251,63 @@ const ExpenseTracker = () => {
       )}
       <>
         <h3 className="transactionList-h3">History</h3>
-        {transactions?.length === 0 && <p>No transactions yet.</p>}
+        {isClient
+          ? transactions?.length === 0 && <p>No transactions yet.</p>
+          : ""}
         <ul className="transactionList-ul">
-          {transactions &&
-            transactions.map((transaction) => (
-              <li key={transaction.id} className="transactionItem-li">
-                {!transaction.deleteConfirmation ? (
-                  <>
-                    <p className="transactionItem-paragraph">
-                      <span className="transactionText">
-                        {transaction.text}
-                      </span>
-                      <span
-                        className={`transactionAmount ${transaction.className}`}
-                      >
-                        {transaction.sign}$
-                        {addCommas(Math.abs(transaction.amount))}
-                      </span>
-                    </p>
-                    <button
-                      className="transactionItem-btn primary-bg"
-                      onClick={() => toggleDeleteConfirmation(transaction.id)}
-                      aria-label="Delete transaction"
-                    >
-                      <FaTimes />
-                    </button>
-                  </>
-                ) : (
-                  <>
-                    <p className="transactionText red-color">
-                      Delete this transaction?
-                    </p>
-                    <article className="transactionItem-article">
+          {isClient
+            ? transactions &&
+              transactions.map((transaction) => (
+                <li key={transaction.id} className="transactionItem-li">
+                  {!transaction.deleteConfirmation ? (
+                    <>
+                      <p className="transactionItem-paragraph">
+                        <span className="transactionText">
+                          {transaction.text}
+                        </span>
+                        <span
+                          className={`transactionAmount ${transaction.className}`}
+                        >
+                          {transaction.sign}$
+                          {addCommas(Math.abs(transaction.amount))}
+                        </span>
+                      </p>
                       <button
-                        className="transactionItem-btn green-bg"
-                        onClick={() => deleteTransaction(transaction)}
-                        aria-label="Confirm transaction deletion"
-                      >
-                        <FaCheck />
-                      </button>
-                      <button
-                        className="transactionItem-btn red-bg"
+                        className="transactionItem-btn primary-bg"
                         onClick={() => toggleDeleteConfirmation(transaction.id)}
-                        aria-label="Cancel transaction deletion"
+                        aria-label="Delete transaction"
                       >
                         <FaTimes />
                       </button>
-                    </article>
-                  </>
-                )}
-              </li>
-            ))}
+                    </>
+                  ) : (
+                    <>
+                      <p className="transactionText red-color">
+                        Delete this transaction?
+                      </p>
+                      <article className="transactionItem-article">
+                        <button
+                          className="transactionItem-btn green-bg"
+                          onClick={() => deleteTransaction(transaction)}
+                          aria-label="Confirm transaction deletion"
+                        >
+                          <FaCheck />
+                        </button>
+                        <button
+                          className="transactionItem-btn red-bg"
+                          onClick={() =>
+                            toggleDeleteConfirmation(transaction.id)
+                          }
+                          aria-label="Cancel transaction deletion"
+                        >
+                          <FaTimes />
+                        </button>
+                      </article>
+                    </>
+                  )}
+                </li>
+              ))
+            : ""}
         </ul>
       </>
     </main>
