@@ -16,7 +16,7 @@ type Transaction = {
 };
 
 const ExpenseTracker = () => {
-  const [balance, setBalance] = useState(() => {
+  const [balance, setBalance] = useState<number>(() => {
     try {
       const savedBalance = localStorage.getItem("balance");
 
@@ -27,7 +27,7 @@ const ExpenseTracker = () => {
       return 0;
     }
   });
-  const [income, setIncome] = useState(() => {
+  const [income, setIncome] = useState<number>(() => {
     try {
       const savedIncome = localStorage.getItem("income");
 
@@ -38,7 +38,7 @@ const ExpenseTracker = () => {
       return 0;
     }
   });
-  const [expense, setExpense] = useState(() => {
+  const [expense, setExpense] = useState<number>(() => {
     try {
       const savedExpense = localStorage.getItem("expense");
 
