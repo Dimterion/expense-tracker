@@ -19,27 +19,33 @@ const ExpenseTracker = () => {
   const [balance, setBalance] = useState(() => {
     try {
       const savedBalance = localStorage.getItem("balance");
+
       return savedBalance ? JSON.parse(savedBalance) : 0;
     } catch (error) {
       console.error("Local storage error:", error);
+
       return 0;
     }
   });
   const [income, setIncome] = useState(() => {
     try {
       const savedIncome = localStorage.getItem("income");
+
       return savedIncome ? JSON.parse(savedIncome) : 0;
     } catch (error) {
       console.error("Local storage error:", error);
+
       return 0;
     }
   });
   const [expense, setExpense] = useState(() => {
     try {
       const savedExpense = localStorage.getItem("expense");
+
       return savedExpense ? JSON.parse(savedExpense) : 0;
     } catch (error) {
       console.error("Local storage error:", error);
+
       return 0;
     }
   });
@@ -50,9 +56,11 @@ const ExpenseTracker = () => {
   const [transactions, setTransactions] = useState<Transaction[]>(() => {
     try {
       const savedTransactions = localStorage.getItem("transactions");
+
       return savedTransactions ? JSON.parse(savedTransactions) : [];
     } catch (error) {
       console.error("Local storage error:", error);
+
       return [];
     }
   });
@@ -115,6 +123,7 @@ const ExpenseTracker = () => {
 
     if (!text || text === "" || isNaN(amount) || amount === 0) {
       toast.error("Text or amount is missing.");
+
       return;
     }
 
@@ -173,20 +182,20 @@ const ExpenseTracker = () => {
       <section>
         <h3 className="balance-h3">Your Balance:</h3>
         <h2 className="balance-h2">
-          {isClient ? `$${addCommas(Number(balance?.toFixed(2) ?? 0))}` : ""}
+          {isClient ? `$${addCommas(Number(balance?.toFixed(2) ?? 0))}` : "..."}
         </h2>
       </section>
       <section className="incomeExpense-section">
         <article className="incomeExpense-article">
           <h4 className="incomeExpense-h4">Income</h4>
           <p className="incomeExpense-paragraph green-color">
-            {isClient ? `$${addCommas(Number(income?.toFixed(2)))}` : ""}
+            {isClient ? `$${addCommas(Number(income?.toFixed(2)))}` : "..."}
           </p>
         </article>
         <article className="incomeExpense-article">
           <h4 className="incomeExpense-h4">Expense</h4>
           <p className="incomeExpense-paragraph red-color">
-            {isClient ? `$${addCommas(Number(expense?.toFixed(2)))}` : ""}
+            {isClient ? `$${addCommas(Number(expense?.toFixed(2)))}` : "..."}
           </p>
         </article>
       </section>
@@ -307,7 +316,7 @@ const ExpenseTracker = () => {
                   )}
                 </li>
               ))
-            : ""}
+            : "Loading..."}
         </ul>
       </>
     </main>
