@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 import { TiArrowForward } from "react-icons/ti";
 import { SignInButton } from "@clerk/nextjs";
@@ -17,7 +18,7 @@ const Guest = () => {
         priority
       />
       <p className="guest-paragraph">
-        Please sign in to continue
+        Please sign in
         <TiArrowForward className="guest-btnArrow" />
       </p>
       <SignInButton>
@@ -25,6 +26,20 @@ const Guest = () => {
           Sign In
         </button>
       </SignInButton>
+      <p className="guest-paragraph">
+        Or use the app without an account
+        <TiArrowForward className="guest-btnArrow" />
+      </p>
+      <Link href="/expense-tracker" className="guest-link">
+        Expense Tracker
+      </Link>
+      <p className="guest-paragraph">
+        App info
+        <TiArrowForward className="guest-btnArrow" />
+      </p>
+      <Link href="/about" className="guest-link">
+        About
+      </Link>
       <aside className="guest-aside">
         *Please note that the app is in Work In Progress state which means that
         it may change in the future and any saved data may be deleted from it.
