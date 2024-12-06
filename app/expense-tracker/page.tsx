@@ -15,10 +15,10 @@ type Transaction = {
   deleteConfirmation: boolean;
 };
 
-function useLocalStorageState<T>(
+const useLocalStorageState = <T,>(
   key: string,
   initialValue: T
-): [T, React.Dispatch<React.SetStateAction<T>>] {
+): [T, React.Dispatch<React.SetStateAction<T>>] => {
   const [state, setState] = useState<T>(() => {
     try {
       const savedValue = localStorage.getItem(key);
@@ -40,7 +40,7 @@ function useLocalStorageState<T>(
   }, [key, state]);
 
   return [state, setState];
-}
+};
 
 const ExpenseTracker = () => {
   const [balance, setBalance] = useLocalStorageState<number>("balance", 0);
@@ -75,15 +75,19 @@ const ExpenseTracker = () => {
       const amount = parseFloat(transaction.amount);
       const className = amount < 0 ? "red-color" : "green-color";
       const sign = amount < 0 ? "-" : "+";
+
+      // Input validation
       if (!text || text === "" || isNaN(amount) || amount === 0) {
         toast.error("Text or amount is missing.");
         return;
       }
+      // Updating state based on transaction type
       if (amount > 0) {
         setIncome((prevIncome) => prevIncome + amount);
       } else {
         setExpense((prevExpense) => prevExpense + Math.abs(amount));
       }
+
       setBalance((prevBalance) => prevBalance + amount);
       setTransactions((prevTransactions) => [
         ...prevTransactions,
@@ -91,6 +95,7 @@ const ExpenseTracker = () => {
       ]);
       setTransaction({ text: "", amount: "0" });
       setExpandSection(!expandSection);
+
       toast.success(`Transaction of ${amount && amount}$ added.`);
     },
     [
@@ -229,56 +234,61 @@ const ExpenseTracker = () => {
         <ul className="transactionList-ul">
           {isClient
             ? transactions &&
-              transactions.map((transaction) => (
-                <li key={transaction.id} className="transactionItem-li">
-                  {!transaction.deleteConfirmation ? (
-                    <>
-                      <p className="transactionItem-paragraph">
-                        <span className="transactionText">
-                          {transaction.text}
-                        </span>
-                        <span
-                          className={`transactionAmount ${transaction.className}`}
-                        >
-                          {transaction.sign}$
-                          {addCommas(Math.abs(transaction.amount))}
-                        </span>
-                      </p>
-                      <button
-                        className="transactionItem-btn primary-bg"
-                        onClick={() => toggleDeleteConfirmation(transaction.id)}
-                        aria-label="Delete transaction"
-                      >
-                        <FaTimes />
-                      </button>
-                    </>
-                  ) : (
-                    <>
-                      <p className="transactionText red-color">
-                        Delete this transaction?
-                      </p>
-                      <article className="transactionItem-article">
+              transactions
+                .slice()
+                .reverse()
+                .map((transaction) => (
+                  <li key={transaction.id} className="transactionItem-li">
+                    {!transaction.deleteConfirmation ? (
+                      <>
+                        <p className="transactionItem-paragraph">
+                          <span className="transactionText">
+                            {transaction.text}
+                          </span>
+                          <span
+                            className={`transactionAmount ${transaction.className}`}
+                          >
+                            {transaction.sign}$
+                            {addCommas(Math.abs(transaction.amount))}
+                          </span>
+                        </p>
                         <button
-                          className="transactionItem-btn green-bg"
-                          onClick={() => deleteTransaction(transaction)}
-                          aria-label="Confirm transaction deletion"
-                        >
-                          <FaCheck />
-                        </button>
-                        <button
-                          className="transactionItem-btn red-bg"
+                          className="transactionItem-btn primary-bg"
                           onClick={() =>
                             toggleDeleteConfirmation(transaction.id)
                           }
-                          aria-label="Cancel transaction deletion"
+                          aria-label="Delete transaction"
                         >
                           <FaTimes />
                         </button>
-                      </article>
-                    </>
-                  )}
-                </li>
-              ))
+                      </>
+                    ) : (
+                      <>
+                        <p className="transactionText red-color">
+                          Delete this transaction?
+                        </p>
+                        <article className="transactionItem-article">
+                          <button
+                            className="transactionItem-btn green-bg"
+                            onClick={() => deleteTransaction(transaction)}
+                            aria-label="Confirm transaction deletion"
+                          >
+                            <FaCheck />
+                          </button>
+                          <button
+                            className="transactionItem-btn red-bg"
+                            onClick={() =>
+                              toggleDeleteConfirmation(transaction.id)
+                            }
+                            aria-label="Cancel transaction deletion"
+                          >
+                            <FaTimes />
+                          </button>
+                        </article>
+                      </>
+                    )}
+                  </li>
+                ))
             : "Loading..."}
         </ul>
       </>
