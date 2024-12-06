@@ -112,69 +112,77 @@ const ExpenseTracker = () => {
     }));
   }, []);
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
+  const handleSubmit = useCallback(
+    (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+      const id = uuidv4();
+      const text = transaction.text.trim();
+      const amount = parseFloat(transaction.amount);
+      const className = amount < 0 ? "red-color" : "green-color";
+      const sign = amount < 0 ? "-" : "+";
+      if (!text || text === "" || isNaN(amount) || amount === 0) {
+        toast.error("Text or amount is missing.");
+        return;
+      }
+      if (amount > 0) {
+        setIncome((prevIncome) => prevIncome + amount);
+      } else {
+        setExpense((prevExpense) => prevExpense + Math.abs(amount));
+      }
+      setBalance((prevBalance) => prevBalance + amount);
+      setTransactions((prevTransactions) => [
+        ...prevTransactions,
+        { id, text, amount, sign, className, deleteConfirmation: false },
+      ]);
+      setTransaction({ text: "", amount: "0" });
+      setExpandSection(!expandSection);
+      toast.success(`Transaction of ${amount && amount}$ added.`);
+    },
+    [
+      transaction,
+      expandSection,
+      setIncome,
+      setExpense,
+      setBalance,
+      setTransactions,
+    ]
+  );
 
-    const id = uuidv4();
-    const text = transaction.text.trim();
-    const amount = parseFloat(transaction.amount);
-    const className = amount < 0 ? "red-color" : "green-color";
-    const sign = amount < 0 ? "-" : "+";
-
-    if (!text || text === "" || isNaN(amount) || amount === 0) {
-      toast.error("Text or amount is missing.");
-
-      return;
-    }
-
-    if (amount > 0) {
-      setIncome((prevIncome: number) => prevIncome + amount);
-    } else {
-      setExpense((prevExpense: number) => prevExpense + Math.abs(amount));
-    }
-
-    setBalance((prevBalance: number) => prevBalance + amount);
-    setTransactions((prevTransactions) => [
-      ...prevTransactions,
-      { id, text, amount, sign, className, deleteConfirmation: false },
-    ]);
-    setTransaction({ text: "", amount: "0" });
-    setExpandSection(!expandSection);
-
-    toast.success(`Transaction of ${amount && amount}$ added.`);
-  }
-
-  function toggleDeleteConfirmation(transactionId: string) {
-    setTransactions((prevTransactions) =>
-      prevTransactions.map((transaction) =>
-        transaction.id === transactionId
-          ? {
-              ...transaction,
-              deleteConfirmation: !transaction.deleteConfirmation,
-            }
-          : transaction
-      )
-    );
-  }
-
-  function deleteTransaction(transaction: Transaction) {
-    setTransactions((prevTransactions) =>
-      prevTransactions.filter(
-        (prevTransaction) => prevTransaction.id !== transaction.id
-      )
-    );
-    setBalance((prevBalance: number) => prevBalance - transaction.amount);
-
-    if (transaction.amount > 0) {
-      setIncome((prevIncome: number) => prevIncome - transaction.amount);
-    } else {
-      setExpense(
-        (prevExpense: number) => prevExpense - Math.abs(transaction.amount)
+  const toggleDeleteConfirmation = useCallback(
+    (transactionId: string) => {
+      setTransactions((prevTransactions) =>
+        prevTransactions.map((transaction) =>
+          transaction.id === transactionId
+            ? {
+                ...transaction,
+                deleteConfirmation: !transaction.deleteConfirmation,
+              }
+            : transaction
+        )
       );
-    }
+    },
+    [setTransactions]
+  );
 
-    toast.success("Transaction deleted.");
-  }
+  const deleteTransaction = useCallback(
+    (transaction: Transaction) => {
+      setTransactions((prevTransactions) =>
+        prevTransactions.filter(
+          (prevTransaction) => prevTransaction.id !== transaction.id
+        )
+      );
+      setBalance((prevBalance) => prevBalance - transaction.amount);
+
+      if (transaction.amount > 0) {
+        setIncome((prevIncome) => prevIncome - transaction.amount);
+      } else {
+        setExpense((prevExpense) => prevExpense - Math.abs(transaction.amount));
+      }
+
+      toast.success("Transaction deleted.");
+    },
+    [setTransactions, setBalance, setIncome, setExpense]
+  );
 
   return (
     <main className="homePage-main">
