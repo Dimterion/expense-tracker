@@ -15,93 +15,48 @@ type Transaction = {
   deleteConfirmation: boolean;
 };
 
+function useLocalStorageState<T>(
+  key: string,
+  initialValue: T
+): [T, React.Dispatch<React.SetStateAction<T>>] {
+  const [state, setState] = useState<T>(() => {
+    try {
+      const savedValue = localStorage.getItem(key);
+
+      return savedValue ? JSON.parse(savedValue) : initialValue;
+    } catch (error) {
+      console.error(`Local storage error (${key}):`, error);
+
+      return initialValue;
+    }
+  });
+
+  useEffect(() => {
+    try {
+      localStorage.setItem(key, JSON.stringify(state));
+    } catch (error) {
+      console.error(`Local storage error (${key}):`, error);
+    }
+  }, [key, state]);
+
+  return [state, setState];
+}
+
 const ExpenseTracker = () => {
-  const [balance, setBalance] = useState<number>(() => {
-    try {
-      const savedBalance = localStorage.getItem("balance");
-
-      return savedBalance ? JSON.parse(savedBalance) : 0;
-    } catch (error) {
-      console.error("Local storage error:", error);
-
-      return 0;
-    }
-  });
-  const [income, setIncome] = useState<number>(() => {
-    try {
-      const savedIncome = localStorage.getItem("income");
-
-      return savedIncome ? JSON.parse(savedIncome) : 0;
-    } catch (error) {
-      console.error("Local storage error:", error);
-
-      return 0;
-    }
-  });
-  const [expense, setExpense] = useState<number>(() => {
-    try {
-      const savedExpense = localStorage.getItem("expense");
-
-      return savedExpense ? JSON.parse(savedExpense) : 0;
-    } catch (error) {
-      console.error("Local storage error:", error);
-
-      return 0;
-    }
-  });
-  const [transaction, setTransaction] = useState({
-    text: "",
-    amount: "0",
-  });
-  const [transactions, setTransactions] = useState<Transaction[]>(() => {
-    try {
-      const savedTransactions = localStorage.getItem("transactions");
-
-      return savedTransactions ? JSON.parse(savedTransactions) : [];
-    } catch (error) {
-      console.error("Local storage error:", error);
-
-      return [];
-    }
-  });
+  const [balance, setBalance] = useLocalStorageState<number>("balance", 0);
+  const [income, setIncome] = useLocalStorageState<number>("income", 0);
+  const [expense, setExpense] = useLocalStorageState<number>("expense", 0);
+  const [transaction, setTransaction] = useState({ text: "", amount: "0" });
+  const [transactions, setTransactions] = useLocalStorageState<Transaction[]>(
+    "transactions",
+    []
+  );
   const [expandSection, setExpandSection] = useState(false);
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
   }, []);
-
-  useEffect(() => {
-    try {
-      localStorage.setItem("balance", JSON.stringify(balance));
-    } catch (error) {
-      console.error("Local storage error:", error);
-    }
-  }, [balance]);
-
-  useEffect(() => {
-    try {
-      localStorage.setItem("income", JSON.stringify(income));
-    } catch (error) {
-      console.error("Local storage error:", error);
-    }
-  }, [income]);
-
-  useEffect(() => {
-    try {
-      localStorage.setItem("expense", JSON.stringify(expense));
-    } catch (error) {
-      console.error("Local storage error:", error);
-    }
-  }, [expense]);
-
-  useEffect(() => {
-    try {
-      localStorage.setItem("transactions", JSON.stringify(transactions));
-    } catch (error) {
-      console.error("Local storage error:", error);
-    }
-  }, [transactions]);
 
   const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
