@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { FaCheck, FaTimes } from "react-icons/fa";
@@ -147,6 +148,12 @@ const ExpenseTracker = () => {
   return (
     <main className="homePage-main">
       <h2 className="homePage-h2">Welcome!</h2>
+      <aside className="homePage-aside">
+        This version of the app uses local storage of your browser. Transactions
+        will be saved as long as you are using the same browser and not clearing
+        its temporary files. You can also{" "}
+        <Link href="./">create an account</Link> to save transactions under it.
+      </aside>
       <section>
         <h3 className="balance-h3">Your Balance:</h3>
         <h2 className="balance-h2">

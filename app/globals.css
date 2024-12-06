@@ -205,7 +205,8 @@ button:active {
   transition: opacity 0.3s ease-in-out;
 }
 
-.guest-aside {
+.guest-aside,
+.homePage-aside {
   max-width: 500px;
   font-size: 0.75rem;
 }
