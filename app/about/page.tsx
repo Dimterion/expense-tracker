@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { FaArrowUp, FaLink } from "react-icons/fa";
 import coverImage from "@/assets/images/expense_tracker_readme_header.svg";
-import footerImage from "@/assets/images/expense_tracker_readme_footer.svg";
 
 const About = () => {
   return (
@@ -36,14 +35,14 @@ const About = () => {
         Contact info <FaLink />
       </h3>
       <a
-        href="https://github.com/Dimterion"
+        href="https://dimterion.bio.link/"
         target="_blank"
         rel="noopener noreferrer"
       >
         <Image
           className="aboutPage-img"
-          src={footerImage}
-          alt="Expense Tracker footer image"
+          src="https://raw.githubusercontent.com/Dimterion/Dimterion/1521172f216f8f90db6b3b986c1cbb19994847eb/images/bio_link_image.svg"
+          alt="Dimterion Bio Link Image"
           width={1000}
           height={400}
           priority
