@@ -156,9 +156,9 @@ const ExpenseTracker = () => {
       </aside>
       <section>
         <h3 className="balance-h3">Your Balance:</h3>
-        <h2 className="balance-h2">
+        <h4 className="balance-h4">
           {isClient ? `$${addCommas(Number(balance?.toFixed(2) ?? 0))}` : "..."}
-        </h2>
+        </h4>
       </section>
       <section className="incomeExpense-section">
         <article className="incomeExpense-article">

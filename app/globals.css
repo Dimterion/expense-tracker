@@ -272,7 +272,7 @@ button:active {
   font-size: 1.5rem;
 }
 
-.balance-h2 {
+.balance-h4 {
   padding: 0.375rem 0.75rem;
   border: 2px solid var(--primary);
   border-radius: 0.5rem;
