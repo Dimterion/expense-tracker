@@ -269,6 +269,11 @@ button:active {
   margin-top: 1rem;
 }
 
+.aboutPage-aside {
+  max-width: 600px;
+  font-size: 0.75rem;
+}
+
 /* Balance component */
 .balance-h3 {
   margin-bottom: 0.5rem;

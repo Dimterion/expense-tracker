@@ -51,6 +51,14 @@ const About = () => {
       <strong>
         <FaArrowUp /> Bio Link <FaArrowUp />
       </strong>
+      <aside className="aboutPage-aside">
+        <strong>Privacy notice:</strong> this app is currently a portfolio
+        project and is in a Work In Progress state. Users can create accounts
+        and use the app, but please note that any data entered may be deleted or
+        altered as the app evolves. Basic information such as email and name is
+        collected for authentication purposes using Clerk. Data is stored using
+        Neon.
+      </aside>
     </main>
   );
 };
