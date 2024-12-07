@@ -144,7 +144,7 @@ button:active {
   gap: 1.5rem;
   max-width: 800px;
   padding: 2rem;
-  border-radius: 1.5rem;
+  border-radius: 0.75rem;
   margin: 2rem auto 1rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   background-color: var(--white);
@@ -154,18 +154,18 @@ button:active {
 @media (max-width: 800px) {
   .guest-section {
     max-width: 95vw;
+    padding: 1rem;
   }
 }
 
 .guest-h1 {
   width: fit-content;
-  padding: 0.5rem 0.75rem;
+  padding: 0.5rem 1.5rem;
   border-radius: 1.5rem;
   margin: auto;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   background-color: var(--primary);
   color: var(--white);
-  font-size: 1.75rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -178,11 +178,12 @@ button:active {
   max-width: 80vw;
   max-height: 40vh;
   object-fit: cover;
-  border-radius: 0.5rem;
+  border-radius: 0.75rem;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .guest-paragraph {
+  max-width: 20rem;
   color: var(--secondary);
   font-size: 1.25rem;
   font-weight: bold;
@@ -207,7 +208,9 @@ button:active {
 }
 
 .guest-btnArrow {
-  rotate: 90deg;
+  position: relative;
+  top: 0.25rem;
+  rotate: 110deg;
 }
 
 .guest-btn:hover,
