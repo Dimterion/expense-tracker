@@ -27,7 +27,7 @@ const Guest = () => {
         </button>
       </SignInButton>
       <p className="guest-paragraph">
-        Or use the app without an account
+        Continue without account
         <TiArrowForward className="guest-btnArrow" />
       </p>
       <Link href="/expense-tracker" className="guest-link">

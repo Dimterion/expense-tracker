@@ -142,8 +142,19 @@ button:active {
   flex-flow: column nowrap;
   align-items: center;
   gap: 1.5rem;
-  margin: 2rem 1rem 1rem;
+  max-width: 800px;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  margin: 2rem auto 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: var(--white);
   text-align: center;
+}
+
+@media (max-width: 800px) {
+  .guest-section {
+    max-width: 95vw;
+  }
 }
 
 .guest-h1 {
