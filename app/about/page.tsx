@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { FaArrowUp, FaLink } from "react-icons/fa";
+import { FaArrowUp } from "react-icons/fa";
 import coverImage from "@/assets/images/expense_tracker_readme_header.svg";
 
 const About = () => {
@@ -31,9 +31,7 @@ const About = () => {
         </li>
         <li>Manage account details</li>
       </ul>
-      <h3 className="aboutPage-h3">
-        Contact info <FaLink />
-      </h3>
+      <h3 className="aboutPage-h3">Contact info</h3>
       <a
         href="https://dimterion.bio.link/"
         target="_blank"
@@ -56,8 +54,15 @@ const About = () => {
         project and is in a Work In Progress state. Users can create accounts
         and use the app, but please note that any data entered may be deleted or
         altered as the app evolves. Basic information such as email and name is
-        collected for authentication purposes using Clerk. Data is stored using
-        Neon.
+        collected for authentication purposes using{" "}
+        <a href="https://clerk.com/" target="_blank" rel="noopener noreferrer">
+          Clerk
+        </a>
+        . Data is stored using{" "}
+        <a href="https://neon.tech/" target="_blank" rel="noopener noreferrer">
+          Neon
+        </a>
+        .
       </aside>
     </main>
   );
