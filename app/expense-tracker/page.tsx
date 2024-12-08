@@ -47,7 +47,7 @@ const ExpenseTracker = () => {
   const [balance, setBalance] = useLocalStorageState<number>("balance", 0);
   const [income, setIncome] = useLocalStorageState<number>("income", 0);
   const [expense, setExpense] = useLocalStorageState<number>("expense", 0);
-  const [transaction, setTransaction] = useState({ text: "", amount: "0" });
+  const [transaction, setTransaction] = useState({ text: "", amount: "" });
   const [transactions, setTransactions] = useLocalStorageState<Transaction[]>(
     "transactions",
     []
@@ -94,7 +94,7 @@ const ExpenseTracker = () => {
         ...prevTransactions,
         { id, text, amount, sign, className, deleteConfirmation: false },
       ]);
-      setTransaction({ text: "", amount: "0" });
+      setTransaction({ text: "", amount: "" });
       setExpandSection(!expandSection);
 
       toast.success(`Transaction of ${amount && amount}$ added.`);

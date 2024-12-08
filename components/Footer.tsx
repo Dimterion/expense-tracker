@@ -2,7 +2,7 @@ const Footer = () => {
   return (
     <footer className="footer-footer">
       <a
-        href="https://github.com/Dimterion/expense-tracker"
+        href="https://dimterion.bio.link/"
         target="_blank"
         rel="noopener noreferrer"
         className="footer-a"
