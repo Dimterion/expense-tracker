@@ -26,6 +26,9 @@ const Header = async () => {
               elements: {
                 rootBox: "header-customClerkBtn",
               },
+              layout: {
+                helpPageUrl: "/about",
+              },
             }}
           />
         </SignedIn>

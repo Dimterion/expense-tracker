@@ -152,7 +152,7 @@ const ExpenseTracker = () => {
         This version of the app uses local storage of your browser. Transactions
         will be saved as long as you are using the same browser and not clearing
         its temporary files. You can also{" "}
-        <Link href="./">create an account</Link> to save transactions under it.
+        <Link href="./">sign in</Link> to save transactions under your account.
       </aside>
       <section>
         <h3 className="balance-h3">Your Balance:</h3>
