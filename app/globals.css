@@ -237,6 +237,22 @@ button:active {
   text-align: center;
 }
 
+.aboutPage-main {
+  max-width: 800px;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  margin: 2rem auto 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: var(--white);
+}
+
+@media (max-width: 800px) {
+  .aboutPage-main {
+    max-width: 95vw;
+    padding: 1rem;
+  }
+}
+
 .homePage-h2,
 .aboutPage-h2,
 .notFoundPage-h2 {
