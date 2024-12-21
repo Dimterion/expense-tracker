@@ -33,7 +33,7 @@ const About = () => {
       </ul>
       <h3 className="aboutPage-h3">Contact info</h3>
       <a
-        href="https://dimterion.bio.link/"
+        href="https://linktr.ee/dimterion"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -47,7 +47,7 @@ const About = () => {
         />
       </a>
       <strong>
-        <FaArrowUp /> Bio Link <FaArrowUp />
+        <FaArrowUp /> Profile Links <FaArrowUp />
       </strong>
       <aside className="aboutPage-aside">
         <strong>Privacy notice:</strong> this app is currently a portfolio
