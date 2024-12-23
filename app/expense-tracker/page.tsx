@@ -146,13 +146,13 @@ const ExpenseTracker = () => {
   );
 
   return (
-    <main className="homePage-main">
-      <h2 className="homePage-h2">Welcome!</h2>
-      <aside className="homePage-aside">
+    <main className="expenseTrackerPage-main">
+      <h2 className="expenseTrackerPage-h2">Welcome!</h2>
+      <aside className="expenseTrackerPage-aside">
         This version of the app uses local storage of your browser. Transactions
         will be saved as long as you are using the same browser and not clearing
-        its temporary files. You can also{" "}
-        <Link href="./">sign in</Link> to save transactions under your account.
+        its temporary files. You can also <Link href="./">sign in</Link> to save
+        transactions under your account.
       </aside>
       <section>
         <h3 className="balance-h3">Your Balance:</h3>

@@ -220,13 +220,15 @@ button:active {
 }
 
 .guest-aside,
+.expenseTrackerPage-aside,
 .homePage-aside {
   max-width: 500px;
   font-size: 0.75rem;
 }
 
-/* Home, About, NotFound pages */
+/* Home, About, ExpenseTracker, NotFound pages */
 .homePage-main,
+.expenseTrackerPage-main,
 .aboutPage-main,
 .notFoundPage-main {
   display: flex;
@@ -237,6 +239,7 @@ button:active {
   text-align: center;
 }
 
+.expenseTrackerPage-main,
 .aboutPage-main {
   max-width: 800px;
   padding: 2rem;
@@ -247,6 +250,7 @@ button:active {
 }
 
 @media (max-width: 800px) {
+  .expenseTrackerPage-main,
   .aboutPage-main {
     max-width: 95vw;
     padding: 1rem;
@@ -254,6 +258,7 @@ button:active {
 }
 
 .homePage-h2,
+.expenseTrackerPage-h2,
 .aboutPage-h2,
 .notFoundPage-h2 {
   font-size: 1.75rem;
