@@ -235,12 +235,7 @@ button:active {
   flex-flow: column nowrap;
   align-items: center;
   gap: 1.25rem;
-  margin: 2rem 0.5rem 1rem;
   text-align: center;
-}
-
-.expenseTrackerPage-main,
-.aboutPage-main {
   max-width: 800px;
   padding: 2rem;
   border-radius: 0.75rem;
@@ -250,8 +245,10 @@ button:active {
 }
 
 @media (max-width: 800px) {
+  .homePage-main,
   .expenseTrackerPage-main,
-  .aboutPage-main {
+  .aboutPage-main,
+  .notFoundPage-main {
     max-width: 95vw;
     padding: 1rem;
   }
@@ -454,6 +451,7 @@ button:active {
   align-items: center;
   gap: 0.75rem;
   padding: 0.5rem;
+  min-height: 55px;
   border: 2px solid var(--primary);
   border-radius: 0.5rem;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -463,6 +461,8 @@ button:active {
 @media (max-width: 500px) {
   .transactionItem-li {
     font-size: 0.9rem;
+    width: 90vw;
+    margin: auto;
   }
 }
 
