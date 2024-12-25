@@ -44,6 +44,7 @@ const useLocalStorageState = <T,>(
 };
 
 const ExpenseTracker = () => {
+  const [toggleInfo, setToggleInfo] = useState(false);
   const [balance, setBalance] = useLocalStorageState<number>("balance", 0);
   const [income, setIncome] = useLocalStorageState<number>("income", 0);
   const [expense, setExpense] = useLocalStorageState<number>("expense", 0);
@@ -148,12 +149,18 @@ const ExpenseTracker = () => {
   return (
     <main className="expenseTrackerPage-main">
       <h2 className="expenseTrackerPage-h2">Welcome!</h2>
-      <aside className="expenseTrackerPage-aside">
-        This version of the app uses local storage of your browser. Transactions
-        will be saved as long as you are using the same browser and not clearing
-        its temporary files. You can also <Link href="./">sign in</Link> to save
-        transactions under your account.
-      </aside>
+      <button className="info-btn" onClick={() => setToggleInfo(!toggleInfo)}>
+        {toggleInfo ? "Close" : "Info"}
+      </button>
+      {toggleInfo && (
+        <aside className="expenseTrackerPage-aside">
+          This version of the app uses local storage of your browser.
+          Transactions will be saved as long as you are using the same browser
+          and not clearing its temporary files. You can also{" "}
+          <Link href="./">sign in</Link> to save transactions under your
+          account.
+        </aside>
+      )}
       <section>
         <h3 className="balance-h3">Your Balance:</h3>
         <h4 className="balance-h4">
