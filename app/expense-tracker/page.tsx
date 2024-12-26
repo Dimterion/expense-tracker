@@ -149,16 +149,26 @@ const ExpenseTracker = () => {
   return (
     <main className="expenseTrackerPage-main">
       <h2 className="expenseTrackerPage-h2">Welcome!</h2>
-      <button className="info-btn" onClick={() => setToggleInfo(!toggleInfo)}>
-        {toggleInfo ? "Close" : "Info"}
-      </button>
+      {!toggleInfo && (
+        <button className="info-btn" onClick={() => setToggleInfo(!toggleInfo)}>
+          Info
+        </button>
+      )}
       {toggleInfo && (
         <aside className="expenseTrackerPage-aside">
-          This version of the app uses local storage of your browser.
-          Transactions will be saved as long as you are using the same browser
-          and not clearing its temporary files. You can also{" "}
-          <Link href="./">sign in</Link> to save transactions under your
-          account.
+          <button
+            className="info-closeBtn"
+            onClick={() => setToggleInfo(!toggleInfo)}
+          >
+            <FaTimes />
+          </button>
+          <p>
+            This version of the app uses local storage of your browser.
+            Transactions will be saved as long as you are using the same browser
+            and not clearing its temporary files. You can also{" "}
+            <Link href="./">sign in</Link> to save transactions under your
+            account.
+          </p>
         </aside>
       )}
       <section>
