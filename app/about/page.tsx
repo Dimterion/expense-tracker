@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 import { FaArrowUp } from "react-icons/fa";
 import coverImage from "@/assets/images/expense_tracker_readme_header.svg";
@@ -31,6 +32,7 @@ const About = () => {
         </li>
         <li>Manage account details</li>
       </ul>
+      <Link href="/">Home page</Link>
       <h3 className="aboutPage-h3">Contact info</h3>
       <a
         href="https://linktr.ee/dimterion"

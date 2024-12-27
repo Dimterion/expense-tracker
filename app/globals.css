@@ -256,7 +256,7 @@ button:active {
 
 .expenseTrackerPage-aside {
   position: relative;
-  padding: 1.5rem;
+  padding: 1.25rem;
   border: 2px solid var(--primary);
   border-radius: 0.5rem;
   margin-top: 0.75rem;
@@ -291,8 +291,7 @@ button:active {
 }
 
 .info-btn {
-  min-width: 7rem;
-  padding: 0.25rem;
+  padding: 0.25rem 1rem;
   border: 2px solid var(--primary);
   border-radius: 0.5rem;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
