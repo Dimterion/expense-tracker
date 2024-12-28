@@ -325,6 +325,15 @@ button:active {
   text-align: start;
 }
 
+.aboutPage-link {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.aboutPage-link:hover {
+  opacity: 0.8;
+  transition: opacity 0.3s ease-in-out;
+}
+
 .aboutPage-paragraph,
 .notFoundPage-paragraph {
   max-width: 600px;

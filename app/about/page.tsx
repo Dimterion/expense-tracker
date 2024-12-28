@@ -32,7 +32,9 @@ const About = () => {
         </li>
         <li>Manage account details</li>
       </ul>
-      <Link href="/">Home page</Link>
+      <Link href="/" className="aboutPage-link">
+        Home page
+      </Link>
       <h3 className="aboutPage-h3">Contact info</h3>
       <a
         href="https://linktr.ee/dimterion"
