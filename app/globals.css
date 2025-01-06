@@ -447,6 +447,10 @@ button:active {
   background-color: rgba(var(--accent), 0.1);
 }
 
+.addTransaction-input:out-of-range {
+  border: 2px solid var(--red);
+}
+
 .addTransaction-btn {
   padding: 0.5rem 0.75rem;
   border: 2px solid var(--primary);
@@ -569,11 +573,17 @@ button:active {
 .footer-footer {
   display: flex;
   justify-content: space-between;
-  padding: 0.25rem 1rem;
+  padding: 0.5rem 1rem;
   margin-top: 1rem;
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
   background-color: var(--primary);
   text-align: center;
+}
+
+@media (min-width: 500px) {
+  .footer-footer {
+    padding: 0.5rem 3rem;
+  }
 }
 
 .footer-a {
