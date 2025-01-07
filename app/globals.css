@@ -326,11 +326,22 @@ button:active {
 }
 
 .aboutPage-link {
+  padding: 0.25rem 1rem;
+  border: 2px solid var(--primary);
+  border-radius: 0.5rem;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  background-color: var(--primary);
+  color: var(--white);
+  font-family: inherit;
+  font-size: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+  cursor: pointer;
   transition: opacity 0.3s ease-in-out;
 }
 
 .aboutPage-link:hover {
-  opacity: 0.8;
+  opacity: 0.9;
   transition: opacity 0.3s ease-in-out;
 }
 
