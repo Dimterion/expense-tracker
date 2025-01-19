@@ -226,6 +226,15 @@ button:active {
   font-size: 0.75rem;
 }
 
+.expenseTrackerPage-aside p a {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.expenseTrackerPage-aside p a:hover {
+  opacity: 0.8;
+  transition: opacity 0.3s ease-in-out;
+}
+
 /* Home, About, ExpenseTracker, NotFound pages */
 .homePage-main,
 .expenseTrackerPage-main,
@@ -267,8 +276,8 @@ button:active {
 
 .info-closeBtn {
   position: absolute;
-  top: 0.25rem;
-  right: 0;
+  top: 0.1rem;
+  right: -0.2rem;
   border: none;
   background-color: transparent;
   color: var(--secondary);
