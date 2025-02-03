@@ -1,7 +1,12 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { FaArrowUp } from "react-icons/fa";
 import coverImage from "@/assets/images/expense_tracker_readme_header.svg";
+
+export const metadata: Metadata = {
+  title: "About",
+};
 
 const About = () => {
   return (

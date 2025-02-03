@@ -10,8 +10,12 @@ import Footer from "@/components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Expense Tracker",
+  title: {
+    template: "%s | Expense Tracker",
+    default: "Expense Tracker",
+  },
   description: "A web application to track your expenses and create a budget.",
+  metadataBase: new URL("https://expense-tracker-lac-eta.vercel.app/"),
 };
 
 export default function RootLayout({
