@@ -27,6 +27,7 @@ Expense Tracker is a full-stack application designed to help track users income 
 - Track transactions history
 - Track overall balance as well as current sum of expenses and income
 - Manage account details (Clerk)
+- A short demonstration can be seen in [this video](https://x.com/i/status/1822937099965788538)
 
 ## <a id="screenshots"></a>📷 Screenshots
 

@@ -36,6 +36,16 @@ const About = () => {
           Track overall balance as well as current sum of expenses and income
         </li>
         <li>Manage account details</li>
+        <li>
+          A short demonstration can be seen in{" "}
+          <a
+            href="https://x.com/i/status/1822937099965788538"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            this video
+          </a>
+        </li>
       </ul>
       <Link href="/" className="aboutPage-link">
         Home page
