@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { FaArrowLeft } from "react-icons/fa";
 
 const NotFound = () => {
   return (
@@ -9,6 +10,7 @@ const NotFound = () => {
         Please check the link and try again.
       </p>
       <Link href="/" className="notFoundPage-link">
+        <FaArrowLeft />
         Home page
       </Link>
     </main>

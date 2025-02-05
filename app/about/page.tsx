@@ -22,7 +22,7 @@ const About = () => {
       />
       <p className="aboutPage-paragraph">
         Expense Tracker is an application designed to help track users income
-        and expenses.
+        and expenses
       </p>
       <h3>Features</h3>
       <ul className="aboutPage-ul">
@@ -66,7 +66,7 @@ const About = () => {
         />
       </a>
       <strong>
-        <FaArrowUp /> Profile Links <FaArrowUp />
+        <FaArrowUp /> Profile links (click the image above) <FaArrowUp />
       </strong>
       <aside className="aboutPage-aside">
         <strong>Privacy notice:</strong> this app is currently a portfolio

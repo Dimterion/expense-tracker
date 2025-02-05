@@ -373,6 +373,9 @@ button:active {
 }
 
 .notFoundPage-link {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
   font-size: 1.25rem;
   transition: opacity 0.3s ease-in-out;
 }
