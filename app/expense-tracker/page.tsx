@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
-import { SignedIn, SignedOut } from "@clerk/nextjs";
+import { SignedIn, SignedOut, SignOutButton } from "@clerk/nextjs";
 import { v4 as uuidv4 } from "uuid";
 import { FaCheck, FaTimes } from "react-icons/fa";
 import { toast } from "react-toastify";
@@ -353,6 +353,9 @@ const ExpenseTracker = () => {
           <Link href="/about" className="guest-link">
             About
           </Link>
+          <SignOutButton>
+            <button className="guest-link">Sign Out</button>
+          </SignOutButton>
           <aside className="guest-aside">Version 1.5</aside>
         </section>
       </SignedIn>
