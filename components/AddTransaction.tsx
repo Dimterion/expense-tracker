@@ -17,6 +17,7 @@ const AddTransaction = () => {
       toast.error(error);
     } else {
       toast.success(`Transaction of ${data?.amount && data?.amount}$ added.`);
+
       formRef.current?.reset();
 
       setExpandSection(!expandSection);
