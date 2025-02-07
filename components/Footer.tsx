@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer className="footer-footer">
       <a
-        href="https://dimterion.bio.link/"
+        href="https://linktr.ee/dimterion"
         target="_blank"
         rel="noopener noreferrer"
         className="footer-a"

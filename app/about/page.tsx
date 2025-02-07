@@ -83,6 +83,7 @@ const About = () => {
         </a>
         .
       </aside>
+      <pre>Version 1.5</pre>
     </main>
   );
 };
