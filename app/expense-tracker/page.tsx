@@ -152,8 +152,8 @@ const ExpenseTracker = () => {
   return (
     <>
       <SignedOut>
-        <main className="expenseTrackerPage-main">
-          <h2 className="expenseTrackerPage-h2">Welcome!</h2>
+        <main className="expenseTracker-main">
+          <h2 className="expenseTracker-h2">Welcome!</h2>
           {!toggleInfo && (
             <button
               className="info-btn"
@@ -163,7 +163,7 @@ const ExpenseTracker = () => {
             </button>
           )}
           {toggleInfo && (
-            <aside className="expenseTrackerPage-aside">
+            <aside className="expenseTracker-aside">
               <button
                 className="info-closeBtn"
                 onClick={() => setToggleInfo(!toggleInfo)}
@@ -338,7 +338,9 @@ const ExpenseTracker = () => {
       <SignedIn>
         <section className="expenseTracker-section">
           <h1 className="expenseTracker-h1">Expense Tracker App</h1>
-          <h2 className="expenseTracker-h2">Manage your expenses and create a budget</h2>
+          <h2 className="expenseTracker-h2">
+            Manage your expenses and create a budget
+          </h2>
           <Image
             className="expenseTracker-img"
             src={coverImage}
@@ -356,7 +358,7 @@ const ExpenseTracker = () => {
           <SignOutButton>
             <button className="expenseTracker-link">Sign Out</button>
           </SignOutButton>
-          <aside className="expenseTracker-aside">Version 1.5</aside>
+          <pre>Version 1.5</pre>
         </section>
       </SignedIn>
     </>

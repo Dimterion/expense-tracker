@@ -226,26 +226,24 @@ button:active {
   transition: opacity 0.3s ease-in-out;
 }
 
-.guest-aside,
 .expenseTracker-aside,
-.expenseTrackerPage-aside,
 .homePage-aside {
   max-width: 500px;
   font-size: 0.75rem;
 }
 
-.expenseTrackerPage-aside p a {
+.expenseTracker-aside p a {
   transition: opacity 0.3s ease-in-out;
 }
 
-.expenseTrackerPage-aside p a:hover {
+.expenseTracker-aside p a:hover {
   opacity: 0.8;
   transition: opacity 0.3s ease-in-out;
 }
 
 /* Home, About, ExpenseTracker, NotFound pages */
 .homePage-main,
-.expenseTrackerPage-main,
+.expenseTracker-main,
 .aboutPage-main,
 .notFoundPage-main {
   display: flex;
@@ -263,7 +261,7 @@ button:active {
 
 @media (max-width: 800px) {
   .homePage-main,
-  .expenseTrackerPage-main,
+  .expenseTracker-main,
   .aboutPage-main,
   .notFoundPage-main {
     max-width: 95vw;
@@ -271,7 +269,7 @@ button:active {
   }
 }
 
-.expenseTrackerPage-aside {
+.expenseTracker-aside {
   position: relative;
   padding: 1.25rem;
   border: 2px solid var(--primary);
@@ -300,7 +298,7 @@ button:active {
 }
 
 .homePage-h2,
-.expenseTrackerPage-h2,
+.expenseTracker-h2,
 .aboutPage-h2,
 .notFoundPage-h2 {
   font-size: 1.75rem;
