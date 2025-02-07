@@ -336,27 +336,27 @@ const ExpenseTracker = () => {
         </main>
       </SignedOut>
       <SignedIn>
-        <section className="guest-section">
-          <h1 className="guest-h1">Expense Tracker App</h1>
-          <h2 className="guest-h2">Manage your expenses and create a budget</h2>
+        <section className="expenseTracker-section">
+          <h1 className="expenseTracker-h1">Expense Tracker App</h1>
+          <h2 className="expenseTracker-h2">Manage your expenses and create a budget</h2>
           <Image
-            className="guest-img"
+            className="expenseTracker-img"
             src={coverImage}
             alt="Expense Tracker logo"
             width={300}
             height={300}
             priority
           />
-          <Link href="/" className="guest-link">
+          <Link href="/" className="expenseTracker-link">
             Expense Tracker
           </Link>
-          <Link href="/about" className="guest-link">
+          <Link href="/about" className="expenseTracker-link">
             About
           </Link>
           <SignOutButton>
-            <button className="guest-link">Sign Out</button>
+            <button className="expenseTracker-link">Sign Out</button>
           </SignOutButton>
-          <aside className="guest-aside">Version 1.5</aside>
+          <aside className="expenseTracker-aside">Version 1.5</aside>
         </section>
       </SignedIn>
     </>
