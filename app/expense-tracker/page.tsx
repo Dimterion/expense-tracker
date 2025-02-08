@@ -25,9 +25,14 @@ const useLocalStorageState = <T,>(
 ): [T, React.Dispatch<React.SetStateAction<T>>] => {
   const [state, setState] = useState<T>(() => {
     try {
-      const savedValue = localStorage.getItem(key);
+      if (typeof localStorage !== "undefined") {
+        const savedValue = localStorage.getItem(key);
+        return savedValue ? JSON.parse(savedValue) : initialValue;
+      } else {
+        console.log("Local storage is not available.");
 
-      return savedValue ? JSON.parse(savedValue) : initialValue;
+        return initialValue;
+      }
     } catch (error) {
       console.error(`Local storage error (${key}):`, error);
 
@@ -37,7 +42,11 @@ const useLocalStorageState = <T,>(
 
   useEffect(() => {
     try {
-      localStorage.setItem(key, JSON.stringify(state));
+      if (typeof localStorage !== "undefined") {
+        localStorage.setItem(key, JSON.stringify(state));
+      } else {
+        console.log("Local storage is not available.");
+      }
     } catch (error) {
       console.error(`Local storage error (${key}):`, error);
     }
