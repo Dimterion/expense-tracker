@@ -378,6 +378,14 @@ button:active {
   font-size: 0.75rem;
 }
 
+.aboutPage-pre {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0.5rem;
+  font-weight: bold;
+  margin-top: 1.5rem;
+}
+
 .notFoundPage-link {
   display: flex;
   align-items: center;

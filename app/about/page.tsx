@@ -83,7 +83,16 @@ const About = () => {
         </a>
         .
       </aside>
-      <pre>Version 1.5</pre>
+      <pre className="aboutPage-pre">
+        <span>Version 1.5</span>
+        <a
+          href="https://github.com/Dimterion/expense-tracker"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub Repo
+        </a>
+      </pre>
     </main>
   );
 };
