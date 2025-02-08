@@ -32,7 +32,6 @@ const Guest = () => {
       <Link href="/about" className="guest-link">
         About
       </Link>
-      <pre>Version 1.5</pre>
     </section>
   );
 };

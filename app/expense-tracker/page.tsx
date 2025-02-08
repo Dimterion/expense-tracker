@@ -367,7 +367,6 @@ const ExpenseTracker = () => {
           <SignOutButton>
             <button className="expenseTracker-link">Sign Out</button>
           </SignOutButton>
-          <pre>Version 1.5</pre>
         </section>
       </SignedIn>
     </>
