@@ -3,16 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { auth } from "@clerk/nextjs/server";
 import { db } from "@/lib/db";
-
-interface TransactionData {
-  text: string;
-  amount: number;
-}
-
-interface TransactionResult {
-  data?: TransactionData;
-  error?: string;
-}
+import { TransactionData, TransactionResult } from "@/types/transaction";
 
 async function addTransaction(formData: FormData): Promise<TransactionResult> {
   const textValue = formData.get("text");

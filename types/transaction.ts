@@ -5,3 +5,13 @@ export interface Transaction {
   userId: string;
   createdAt: Date;
 }
+
+export interface TransactionData {
+  text: string;
+  amount: number;
+}
+
+export interface TransactionResult {
+  data?: TransactionData;
+  error?: string;
+}
