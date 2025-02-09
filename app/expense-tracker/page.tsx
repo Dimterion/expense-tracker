@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 import { SignedIn, SignedOut, SignOutButton } from "@clerk/nextjs";
 import { v4 as uuidv4 } from "uuid";
-import { FaCheck, FaTimes } from "react-icons/fa";
+import { FaCheck, FaStarOfLife, FaTimes } from "react-icons/fa";
 import { toast } from "react-toastify";
 import { addCommas } from "@/lib/utils";
 import coverImage from "@/assets/images/cover_img.jpg";
@@ -168,7 +168,7 @@ const ExpenseTracker = () => {
               className="info-btn"
               onClick={() => setToggleInfo(!toggleInfo)}
             >
-              Info
+              <FaStarOfLife />
             </button>
           )}
           {toggleInfo && (
