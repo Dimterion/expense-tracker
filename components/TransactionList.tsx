@@ -6,7 +6,13 @@ const TransactionList = async () => {
   const { transactions, error } = await getTransactions();
 
   if (error) {
-    return <p>{error}</p>;
+    return (
+      <p className="transactionList-p">
+        Transaction list error. Please refresh the page or check the application
+        later.<br></br>
+        {error}
+      </p>
+    );
   }
 
   return (

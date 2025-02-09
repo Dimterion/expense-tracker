@@ -544,6 +544,14 @@ button:active {
   padding: 0;
 }
 
+.transactionList-p {
+  font-size: 1.25rem;
+  margin-top: 1rem;
+  width: 95vw;
+  max-width: 500px;
+  padding: 0.5rem;
+}
+
 /* Transaction item component */
 .transactionItem-li {
   display: flex;
