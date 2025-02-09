@@ -299,7 +299,11 @@ const ExpenseTracker = () => {
                                 className={`transactionAmount ${transaction.className}`}
                               >
                                 {transaction.sign}$
-                                {addCommas(Math.abs(transaction.amount))}
+                                {addCommas(
+                                  Math.abs(
+                                    Number(transaction.amount.toFixed(2))
+                                  )
+                                )}
                               </span>
                             </p>
                             <button

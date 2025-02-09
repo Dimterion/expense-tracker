@@ -30,7 +30,8 @@ const TransactionItem = ({ transaction }: { transaction: Transaction }) => {
           <p className="transactionItem-paragraph">
             <span className="transactionText">{transaction.text}</span>
             <span className={`transactionAmount ${className}`}>
-              {sign}${addCommas(Math.abs(transaction.amount))}
+              {sign}$
+              {addCommas(Math.abs(Number(transaction.amount.toFixed(2))))}
             </span>
           </p>
           <button
