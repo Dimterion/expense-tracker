@@ -163,14 +163,12 @@ const ExpenseTracker = () => {
       <SignedOut>
         <main className="expenseTracker-main">
           <h2 className="expenseTracker-h2">Welcome!</h2>
-          {!toggleInfo && (
-            <button
-              className="info-btn"
-              onClick={() => setToggleInfo(!toggleInfo)}
-            >
-              <FaStarOfLife />
-            </button>
-          )}
+          <button
+            className="info-btn"
+            onClick={() => setToggleInfo(!toggleInfo)}
+          >
+            <FaStarOfLife />
+          </button>
           {toggleInfo && (
             <aside className="expenseTracker-aside">
               <button
